@@ -11,6 +11,10 @@
 	}
 }
 
+main {
+	margin-top: 3em;
+}
+
 a {
 	color: #A9855B;
 }
@@ -230,6 +234,7 @@ h6.float-right {
 
 li {
 	margin-bottom: unset;
+	padding-left: 0.5em;
 }
 
 button.icon {
@@ -260,7 +265,7 @@ nav {
 	position: fixed;
 	width: 100%;
 	background-color: #f8f8f8;
-	border-bottom: .1rem solid #333333;
+	border-bottom: .1rem solid #e3e3e3;
 	top: 0;
 }
 
@@ -278,5 +283,5 @@ nav {
 .navitem {
 	display: inline;
 	margin-bottom: 0;
-	margin-left: 1rem;
+	margin-left: 0.75em;
 }
