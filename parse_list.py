@@ -76,3 +76,5 @@ if __name__ == "__main__":
   render_env.lstrip_blocks = True
   with open("public/index.html", "w") as f:
     f.write(render_env.get_template("list.html").render(tier_list=zip(ord_tiers, tier_list)))
+  with open("public/select/index.html", "w") as f:
+    f.write(render_env.get_template("select.html").render())

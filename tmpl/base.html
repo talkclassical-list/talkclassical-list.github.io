@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  {% block head %}
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link rel="stylesheet" href="https://indestructibletype.com/fonts/Bodoni/Bodoni.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/milligram">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/linea-io/Linea-Iconset/_arrows/_ICONFONT/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/linea-io/Linea-Iconset/_basic/_ICONFONT/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/linea-io/Linea-Iconset/_ecommerce/_ICONFONT/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/linea-io/Linea-Iconset/_music/_ICONFONT/styles.css">
+  <link rel="stylesheet" href="/style.css">
+  <title>{% block title %}{% endblock %}</title>
+  {% endblock %}
+</head>
+<body>
+  <nav>
+    <div class="navcontainer">
+      <a href="/">Talk Classical List</a>
+      <ul class="navlist">
+        <!--<li class="navitem"><a href="about" alt="About" class="icon icon-arrows-info"></a></li>-->
+        <li class="navitem"><a href="/stats" alt="Stats" class="icon icon-ecommerce-graph2"></a></li>
+        <li class="navitem"><a href="/select" alt="Selector" class="icon icon-music-shuffle-button"></a></li>
+        <li class="navitem"><button id="tier-expand" alt="Expand/Collapse" class="icon icon-arrows-expand-vertical1"></button></li>
+        <!--<li class="navitem"><button id="search" alt="Search" class="icon icon-basic-magnifier"></button></li>-->
+      </ul>
+    </div>
+  </nav>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
