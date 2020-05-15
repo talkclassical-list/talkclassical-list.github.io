@@ -1,4 +1,5 @@
-# All generated HTML files
+# All generated files
+*.json
 public/**/*.html
 
 # Downloaded raw list
