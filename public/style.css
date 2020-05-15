@@ -1,11 +1,11 @@
 @media (max-width: 80.0rem) {
-	main {
-		margin: 0.5em 1.5em;
+	main, .navcontainer {
+		margin: 0 1.5em;
 	}
 }
 
 @media (min-width: 80.0rem) {
-	main {
+	main, .navcontainer {
 		max-width: 120rem;
 		margin: 0 auto;
 	}
@@ -205,27 +205,78 @@ h6.float-right {
 }
 
 .tier {
-	font-weight: 700;
+	font-weight: 500;
 	margin-bottom: unset;
 	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .tier:after {
 	content: "»";
 	transform: rotate(90deg);
-	float: right;
+	z-index: -1;
 }
 
 .active:after {
 	content: "«";
 }
 
-ul {
+.list {
 	max-height: 0;
 	overflow: hidden;
-	transition: max-height 0.3s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 li {
 	margin-bottom: unset;
+}
+
+button.icon {
+	background-color: unset;
+	border-color: unset;
+	border: none;
+	color: unset;
+	height: unset;
+	padding: unset;
+	line-height: unset;
+	margin-bottom: unset;
+	color: #A9855B;
+}
+
+button.icon:focus, button.icon:hover {
+	color: #606c76;
+}
+
+.icon {
+	font-size: 1.5em;
+}
+
+.icon:before {
+	line-height: unset;
+}
+
+nav {
+	position: fixed;
+	width: 100%;
+	background-color: #f8f8f8;
+	border-bottom: .1rem solid #333333;
+	top: 0;
+}
+
+.navcontainer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navlist {
+	list-style: none;
+	margin-bottom: 0;
+}
+
+.navitem {
+	display: inline;
+	margin-bottom: 0;
+	margin-left: 1rem;
 }

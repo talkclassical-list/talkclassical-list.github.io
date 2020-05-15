@@ -7,15 +7,31 @@
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/milligram">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/linea-io/Linea-Iconset/_arrows/_ICONFONT/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/linea-io/Linea-Iconset/_basic/_ICONFONT/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/linea-io/Linea-Iconset/_ecommerce/_ICONFONT/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/linea-io/Linea-Iconset/_music/_ICONFONT/styles.css">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <nav>
+    <div class="navcontainer">
+      Talk Classical List
+      <ul class="navlist">
+        <!--<li class="navitem"><a href="about" alt="About" class="icon icon-arrows-info"></a></li>-->
+        <li class="navitem"><a href="stats" alt="Stats" class="icon icon-ecommerce-graph2"></a></li>
+        <li class="navitem"><a href="select" alt="Selector" class="icon icon-music-shuffle-button"></a></li>
+        <li class="navitem"><button id="tier-expand" alt="Expand/Collapse" class="icon icon-arrows-expand-vertical1"></button></li>
+        <!--<li class="navitem"><button id="search" alt="Search" class="icon icon-basic-magnifier"></button></li>-->
+      </ul>
+    </div>
+  </nav>
   <main>
     <h1>The Talk Classical Community's Favorite and Most Highly Recommended Works</h1>
     <hr>
     {% for tier in tier_list %}
     <h4 class="tier">{{tier[0]}} Tier</h4>
-    <ul>
+    <ul class="list">
       {% for work in tier[1] %}
         <li><b>{{ work["comp"] }}</b>: <i>{{ work["title"] }}</i> {% if work["raw_yr"] %}({{ work["raw_yr"] }}){% elif work["year"] %}({{ work["year"] }}){% endif %}</li>
       {% endfor %}

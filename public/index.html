@@ -7,18 +7,34 @@
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/milligram">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/linea-io/Linea-Iconset/_arrows/_ICONFONT/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/linea-io/Linea-Iconset/_basic/_ICONFONT/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/linea-io/Linea-Iconset/_ecommerce/_ICONFONT/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/linea-io/Linea-Iconset/_music/_ICONFONT/styles.css">
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <nav>
+    <div class="navcontainer">
+      Talk Classical List
+      <ul class="navlist">
+        <!--<li class="navitem"><a href="about" alt="About" class="icon icon-arrows-info"></a></li>-->
+        <li class="navitem"><a href="stats" alt="Stats" class="icon icon-ecommerce-graph2"></a></li>
+        <li class="navitem"><a href="select" alt="Selector" class="icon icon-music-shuffle-button"></a></li>
+        <li class="navitem"><button id="tier-expand" alt="Expand/Collapse" class="icon icon-arrows-expand-vertical1"></button></li>
+        <li class="navitem"><button id="search" alt="Search" class="icon icon-basic-magnifier"></button></li>
+      </ul>
+    </div>
+  </nav>
   <main>
     <h1>The Talk Classical Community's Favorite and Most Highly Recommended Works</h1>
     <hr>
     <h4 class="tier">1st Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Beethoven</b>: <i>Symphony #9 in D minor, op. 125 "Choral"</i> (1824)</li>
     </ul>
     <h4 class="tier">2nd Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Das wohltemperierte Klavier (The Well-Tempered Clavier), BWV 846-893</i> (1722, 1742)</li>
         <li><b>Wagner</b>: <i>Das Rheingold (The Rhinegold)</i> (1854)</li>
         <li><b>Wagner</b>: <i>Die Walküre (The Valkyrie, including "The Ride of the Valkyries")</i> (1856)</li>
@@ -27,13 +43,13 @@
         <li><b>Wagner</b>: <i>Tristan und Isolde</i> (1859)</li>
     </ul>
     <h4 class="tier">3rd Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Mass in B minor, BWV 232</i> (1749)</li>
         <li><b>Beethoven</b>: <i>Symphony #5 in C minor, op. 67</i> (1808)</li>
         <li><b>Brahms</b>: <i>Symphony #4 in E minor, op. 98</i> (1885)</li>
     </ul>
     <h4 class="tier">4th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Beethoven</b>: <i>Symphony #6 "Pastoral" in F, op. 68</i> (1808)</li>
         <li><b>Dvořák</b>: <i>Symphony #9 in E minor, op. 95 "From the New World"</i> (1893)</li>
         <li><b>Mahler</b>: <i>Symphony #2 "Resurrection"</i> (1894)</li>
@@ -42,7 +58,7 @@
         <li><b>Stravinsky</b>: <i>Le Sacre du printemps (The Rite of Spring)</i> (1913)</li>
     </ul>
     <h4 class="tier">5th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Cello Suites, BWV 1007-1012</i> (1720)</li>
         <li><b>Bach</b>: <i>Goldberg Variations, BWV 988</i> (1741-2)</li>
         <li><b>Bach</b>: <i>Matthäus-Passion ("St. Matthew Passion"), BWV 244</i> (1746)</li>
@@ -55,7 +71,7 @@
         <li><b>Schubert</b>: <i>String Quintet in C, D. 956</i> (1828)</li>
     </ul>
     <h4 class="tier">6th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Die Kunst der Fuge, BWV 1080</i> (1742-50)</li>
         <li><b>Beethoven</b>: <i>Piano Sonata #29 in B-flat, op. 106 "Hammerklavier"</i> (1818)</li>
         <li><b>Brahms</b>: <i>Piano Quintet in F minor, op. 34</i> (1864)</li>
@@ -69,7 +85,7 @@
         <li><b>Schubert</b>: <i>Winterreise, D. 911</i> (1827)</li>
     </ul>
     <h4 class="tier">7th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Brandenburg Concertos, BWV 1046-1051</i> (1721)</li>
         <li><b>Bach</b>: <i>Concerto for 2 Violins in D minor, BWV 1043</i> (by 1731)</li>
         <li><b>Beethoven</b>: <i>Piano Concerto #4 in G, op. 58</i> (1806/7)</li>
@@ -84,7 +100,7 @@
         <li><b>Tchaikovsky</b>: <i>Symphony #6 "Pathétique" in B minor, op. 74</i> (1893)</li>
     </ul>
     <h4 class="tier">8th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Beethoven</b>: <i>Symphony #7 in A, op. 92</i> (1812)</li>
         <li><b>Berlioz</b>: <i>Symphonie fantastique, op. 14</i> (1830)</li>
         <li><b>Brahms</b>: <i>Ein deutsches Requiem, op. 45</i> (1868)</li>
@@ -96,7 +112,7 @@
         <li><b>Sibelius</b>: <i>Violin Concerto in D minor, op. 47</i> (1905)</li>
     </ul>
     <h4 class="tier">9th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Musikalisches Opfer (A Musical Offering), BWV 1079</i> (1747)</li>
         <li><b>Beethoven</b>: <i>Piano Sonata #21 in C, op. 53 "Waldstein"</i> (1804)</li>
         <li><b>Brahms</b>: <i>Piano Trio #1 in B, op. 8</i> (1891)</li>
@@ -108,7 +124,7 @@
         <li><b>Sibelius</b>: <i>Symphony #2 in D, op. 43</i> (1902)</li>
     </ul>
     <h4 class="tier">10th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Cantata #140 "Wachet auf, ruft uns die Stimme"</i> (1731)</li>
         <li><b>Bach</b>: <i>Sonatas and Partitas for Solo Violin, BWV 1001-1006</i> (1720)</li>
         <li><b>Beethoven</b>: <i>Piano Sonata #23 in F minor, op. 57 "Appassionata"</i> (1805)</li>
@@ -124,7 +140,7 @@
         <li><b>Vivaldi</b>: <i>Il cimento dell'armonia e dell'inventione, including Le quattro stagioni (The Four Seasons)</i> (1725)</li>
     </ul>
     <h4 class="tier">11th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bartók</b>: <i>Concerto for Orchestra, Sz. 116</i> (1943)</li>
         <li><b>Beethoven</b>: <i>Piano Sonata #30 in E, op. 109</i> (1820)</li>
         <li><b>Brahms</b>: <i>Cello Sonata #1 in E minor, op. 38</i> (1865)</li>
@@ -134,7 +150,7 @@
         <li><b>Mozart</b>: <i>Piano Concerto #21 in C, K. 467</i> (1785)</li>
     </ul>
     <h4 class="tier">12th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Cantata #82 "Ich habe genug"</i> (1731)</li>
         <li><b>Handel</b>: <i>Messiah, HWV 56</i> (1741)</li>
         <li><b>Mozart</b>: <i>Piano Concerto #23 in A, K. 488</i> (1786)</li>
@@ -146,7 +162,7 @@
         <li><b>Shostakovich</b>: <i>Symphony #5 in D minor, op. 47</i> (1937)</li>
     </ul>
     <h4 class="tier">13th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Brahms</b>: <i>String Sextet #1 in B-flat, op. 18</i> (1860)</li>
         <li><b>Bruckner</b>: <i>Symphony #8 in C minor, WAB 108</i> (1890)</li>
         <li><b>Dvořák</b>: <i>String Quartet #12 in F, op. 96 "American"</i> (1893)</li>
@@ -164,7 +180,7 @@
         <li><b>Tallis</b>: <i>Spem in alium</i> (c. 1570)</li>
     </ul>
     <h4 class="tier">14th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bartók</b>: <i>String Quartet #4, Sz. 91</i> (1928)</li>
         <li><b>Debussy</b>: <i>Suite Bergamasque, L 75, including "Clair de lune"</i> (1905)</li>
         <li><b>Dvořák</b>: <i>Piano Quintet #2 in A, op. 81</i> (1887)</li>
@@ -181,7 +197,7 @@
         <li><b>Strauss, R.</b>: <i>Vier letzte Lieder (Four Last Songs)</i> (1948)</li>
     </ul>
     <h4 class="tier">15th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Orchestral Suites, BWV 1066-1069</i> (1724-30)</li>
         <li><b>Barber</b>: <i>Knoxville, Summer of 1915, op. 24</i> (1947)</li>
         <li><b>Beethoven</b>: <i>Missa Solemnis in D, op. 123</i> (1823)</li>
@@ -197,7 +213,7 @@
         <li><b>Stravinsky</b>: <i>Petrushka</i> (1911, 1946)</li>
     </ul>
     <h4 class="tier">16th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Barber</b>: <i>Violin Concerto, op. 14</i> (1939)</li>
         <li><b>Bartók</b>: <i>Music for Strings, Percussion, and Celesta, Sz. 106</i> (1936)</li>
         <li><b>Borodin</b>: <i>String Quartet #2 in D</i> (1881)</li>
@@ -219,7 +235,7 @@
         <li><b>Tchaikovsky</b>: <i>Symphony #5 in E minor, op. 64</i> (1888)</li>
     </ul>
     <h4 class="tier">17th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bizet</b>: <i>Carmen</i> (1875)</li>
         <li><b>Brahms</b>: <i>Piano Quartet #2 in A, op. 26</i> (1861)</li>
         <li><b>Chopin</b>: <i>Ballades</i> (1831-42)</li>
@@ -234,7 +250,7 @@
         <li><b>Tchaikovsky</b>: <i>Piano Concerto #1 in B-flat minor, op. 23</i> (1875)</li>
     </ul>
     <h4 class="tier">18th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Passacaglia and Fugue in C minor, BWV 582</i> (1708)</li>
         <li><b>Beethoven</b>: <i>Piano Sonata #8 in C minor, op. 13 "Pathetique"</i> (1798)</li>
         <li><b>Bruckner</b>: <i>Symphony #7 in E, WAB 107</i> (1885)</li>
@@ -247,7 +263,7 @@
         <li><b>Strauss, R.</b>: <i>Metamorphosen</i> (1945)</li>
     </ul>
     <h4 class="tier">19th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Chromatic Fantasia and Fugue in D minor, BWV 903</i> (c. 1720)</li>
         <li><b>Bach</b>: <i>Harpsichord Concerto #1 in D minor, BWV 1052</i> (c. 1738)</li>
         <li><b>Bartók</b>: <i>String Quartet #3, Sz. 85</i> (1927)</li>
@@ -261,7 +277,7 @@
         <li><b>Stravinsky</b>: <i>L'Oiseau de Feu</i> (1910)</li>
     </ul>
     <h4 class="tier">20th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Toccata and Fugue in D minor, BWV 565</i> (c. 1704?)</li>
         <li><b>Bach</b>: <i>Violin Concerto #2 in E, BWV 1042</i> (before 1737)</li>
         <li><b>Beethoven</b>: <i>Diabelli Variations, op. 120</i> (1823)</li>
@@ -278,7 +294,7 @@
         <li><b>Wagner</b>: <i>Parsifal</i> (1882)</li>
     </ul>
     <h4 class="tier">21st Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Beethoven</b>: <i>"Triple" Concerto for violin, cello, and piano in C, op. 56</i> (1805)</li>
         <li><b>Beethoven</b>: <i>Piano Sonata #17 in D minor, op. 31/2 "Tempest"</i> (1802)</li>
         <li><b>Biber</b>: <i>Mystery (Rosary) Sonatas</i> (c. 1676)</li>
@@ -294,7 +310,7 @@
         <li><b>Stravinsky</b>: <i>Symphony of Psalms</i> (1930)</li>
     </ul>
     <h4 class="tier">22nd Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Alwyn</b>: <i>Harp Concerto "Lyra Angelica"</i> (1954)</li>
         <li><b>Bach</b>: <i>Violin Concerto #1 in A minor, BWV 1041</i> (c. 1723)</li>
         <li><b>Bruckner</b>: <i>Symphony #4 in E-flat "Romantic", WAB 104</i> (1874)</li>
@@ -311,7 +327,7 @@
         <li><b>Verdi</b>: <i>Requiem</i> (1874)</li>
     </ul>
     <h4 class="tier">23rd Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Beethoven</b>: <i>Piano Trio #7 in B-flat, op. 97 "Archduke"</i> (1811)</li>
         <li><b>Beethoven</b>: <i>Symphony #8 in F, op. 93</i> (1812)</li>
         <li><b>Elgar</b>: <i>"Enigma" Variations on an Original Theme, op. 36</i> (1899)</li>
@@ -324,7 +340,7 @@
         <li><b>Shostakovich</b>: <i>Symphony #9 in E-flat, op. 70</i> (1945)</li>
     </ul>
     <h4 class="tier">24th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Johannes-Passion, BWV 245</i> (1724-49)</li>
         <li><b>Brahms</b>: <i>Piano Quartet #1 in G minor, op. 25</i> (1861)</li>
         <li><b>Debussy</b>: <i>Images pour orchestre, L 122</i> (1912)</li>
@@ -337,14 +353,14 @@
         <li><b>Vaughan Williams</b>: <i>Fantasia on a Theme by Thomas Tallis</i> (1910)</li>
     </ul>
     <h4 class="tier">25th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Ravel</b>: <i>Piano Concerto for the Left Hand in D</i> (1930)</li>
         <li><b>Respighi</b>: <i>Pini di Roma</i> (1924)</li>
         <li><b>Schubert</b>: <i>Piano Trio #2 in E-flat, D. 929</i> (1827)</li>
         <li><b>Schubert</b>: <i>Wanderer Fantasy in C, D. 760</i> (1822)</li>
     </ul>
     <h4 class="tier">26th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Magnificat in D, BWV 243</i> (1723, 1733)</li>
         <li><b>Bach</b>: <i>Partitas for Keyboard #1-6, BWV 825-830 (Clavier-Übung I)</i> (1725-30)</li>
         <li><b>Crumb</b>: <i>Black Angels (Thirteen Images from the Dark Land)</i> (1970)</li>
@@ -359,7 +375,7 @@
         <li><b>Nielsen</b>: <i>Symphony #3, op. 27 "Sinfonia Espansiva"</i> (1911)</li>
     </ul>
     <h4 class="tier">27th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bartók</b>: <i>Violin Concerto #2 in G, Sz. 112, BB 117</i> (1938)</li>
         <li><b>Beethoven</b>: <i>Piano Sonata #26 in E-flat, op. 81a "Les Adieux"</i> (1812)</li>
         <li><b>Beethoven</b>: <i>Piano Sonata #31 in A-flat, op. 110</i> (1822)</li>
@@ -382,7 +398,7 @@
         <li><b>Tchaikovsky</b>: <i>Symphony #1 in G minor, op. 13 "Winter Daydreams"</i> (1866)</li>
     </ul>
     <h4 class="tier">28th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Albéniz</b>: <i>Iberia</i> (1905-9)</li>
         <li><b>Bach</b>: <i>English Suites, BWV 806-811</i> (by 1725)</li>
         <li><b>Beethoven</b>: <i>String Quartet #16 in F, op. 135</i> (1826)</li>
@@ -399,7 +415,7 @@
         <li><b>Vivaldi</b>: <i>L'estro Armonico, op. 3</i> (1711)</li>
     </ul>
     <h4 class="tier">29th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bartók</b>: <i>String Quartet #6, Sz. 114</i> (1939)</li>
         <li><b>Beethoven</b>: <i>Piano Sonata #15 in D, op. 28 "Pastoral"</i> (1801)</li>
         <li><b>Beethoven</b>: <i>Piano Sonata #28 in A, op. 101</i> (1816)</li>
@@ -427,7 +443,7 @@
         <li><b>Wagner</b>: <i>Die Meistersinger von Nürnberg</i> (1867)</li>
     </ul>
     <h4 class="tier">30th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Abrahamsen</b>: <i>Let me tell you</i> (2013)</li>
         <li><b>Beethoven</b>: <i>String Quartet #12 in E-flat, op. 127</i> (1825)</li>
         <li><b>Bloch</b>: <i>Schelomo</i> (1916)</li>
@@ -453,7 +469,7 @@
         <li><b>Zemlinsky</b>: <i>Lyric Symphony, op. 18</i> (1923)</li>
     </ul>
     <h4 class="tier">31st Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bartók</b>: <i>Piano Concerto #2 in G, Sz. 95, BB 101</i> (1930-31)</li>
         <li><b>Berg</b>: <i>Lyric Suite</i> (1926)</li>
         <li><b>Brahms</b>: <i>Alto Rhapsody, op. 53</i> (1870)</li>
@@ -480,7 +496,7 @@
         <li><b>Verdi</b>: <i>Aida</i> (1871)</li>
     </ul>
     <h4 class="tier">32nd Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Cantata #147 "Herz und Mund und Tat und Leben"</i> (1723)</li>
         <li><b>Bach</b>: <i>Christmas Oratorio, BWV 248</i> (1734)</li>
         <li><b>Barber</b>: <i>String Quartet, op. 11; including the Adagio for Strings, op. 11a</i> (1936)</li>
@@ -509,7 +525,7 @@
         <li><b>Webern</b>: <i>Movements (5) for String Quartet, op. 5</i> (1909)</li>
     </ul>
     <h4 class="tier">33rd Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Cantata #4 "Christ lag in Todes Banden"</i> (probably 1707)</li>
         <li><b>Bach</b>: <i>Cantata #80 "Ein feste Burg ist unser Gott"</i> (1731)</li>
         <li><b>Beethoven</b>: <i>Cello Sonata #1 in F, op. 5/1</i> (1796)</li>
@@ -538,7 +554,7 @@
         <li><b>Villa-Lobos</b>: <i>Bachianas Brasileiras</i> (1930-45)</li>
     </ul>
     <h4 class="tier">34th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Allegri</b>: <i>Miserere mei, Deus</i> (c. 1638)</li>
         <li><b>Bach</b>: <i>Clavier-Übung III</i> (German Organ Mass, 1739)</li>
         <li><b>Bach</b>: <i>Harpsichord Concerto #2 in E, BWV 1053</i> (c. 1738)</li>
@@ -562,7 +578,7 @@
         <li><b>Wagner</b>: <i>Siegfried Idyll</i> (1870)</li>
     </ul>
     <h4 class="tier">35th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Inventions and Sinfonias (Two- and Three-Part Inventions), BWV 772-801</i> (1723)</li>
         <li><b>Bach</b>: <i>Italian Concerto, BWV 971</i> (1735)</li>
         <li><b>Beethoven</b>: <i>Piano Concerto #1 in C, op. 15</i> (1795, rev. 1800)</li>
@@ -586,7 +602,7 @@
         <li><b>Wagner</b>: <i>Tannhäuser</i> (1845)</li>
     </ul>
     <h4 class="tier">36th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>French Suites, BWV 812-817</i> (1722-5)</li>
         <li><b>Bartók</b>: <i>String Quartet #2, Sz. 67</i> (1917)</li>
         <li><b>Beethoven</b>: <i>Piano Sonata #27 in E minor, op. 90</i> (1814)</li>
@@ -611,7 +627,7 @@
         <li><b>Vaughan Williams</b>: <i>Symphony #5 in D</i> (1943)</li>
     </ul>
     <h4 class="tier">37th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Arensky</b>: <i>Piano Trio #1 in D minor, op. 32</i> (1894)</li>
         <li><b>Bach</b>: <i>Overture in the French Style, BWV 831</i> (1735)</li>
         <li><b>Bach</b>: <i>Trio Sonatas for organ, BWV 525-530</i> (c. 1730)</li>
@@ -634,7 +650,7 @@
         <li><b>Webern</b>: <i>Symphony, op. 21</i> (1923)</li>
     </ul>
     <h4 class="tier">38th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Berg</b>: <i>Wozzeck</i> (1922)</li>
         <li><b>Boulez</b>: <i>Le Marteau sans maître</i> (1955)</li>
         <li><b>Brahms</b>: <i>Hungarian Dances, WoO 1</i> (1869)</li>
@@ -653,7 +669,7 @@
         <li><b>Verdi</b>: <i>Rigoletto</i> (1851)</li>
     </ul>
     <h4 class="tier">39th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bartók</b>: <i>Sonata for 2 Pianos and Percussion, Sz. 110</i> (1937)</li>
         <li><b>Bartók</b>: <i>The Miraculous Mandarin, Sz. 73</i> (1924)</li>
         <li><b>Berg</b>: <i>Pieces (3) for Orchestra, op. 6</i> (1915)</li>
@@ -669,7 +685,7 @@
         <li><b>Wagner</b>: <i>Lohengrin</i> (1848)</li>
     </ul>
     <h4 class="tier">40th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Beethoven</b>: <i>Fidelio, op. 72</i> (1805)</li>
         <li><b>Bruckner</b>: <i>Symphony #5 in B-flat, WAB 105</i> (1878)</li>
         <li><b>Debussy</b>: <i>Rêverie, L 68</i> (1890)</li>
@@ -678,7 +694,7 @@
         <li><b>Varèse</b>: <i>Amériques</i> (1921; rev. 1927)</li>
     </ul>
     <h4 class="tier">41st Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Adams</b>: <i>Harmonielehre</i> (1985)</li>
         <li><b>Bach</b>: <i>Fugue in G minor, BWV 578, "Little"</i> (c. 1713)</li>
         <li><b>Berg</b>: <i>Kammerkonzert (Chamber Concerto)</i> (1925)</li>
@@ -697,7 +713,7 @@
         <li><b>Scriabin</b>: <i>Etudes (12), op. 8</i> (1894)</li>
     </ul>
     <h4 class="tier">42nd Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Alkan</b>: <i>Études (12) dans tous les tons mineurs, op. 39 (includes the Concerto for Solo Piano and the Symphony for Solo Piano)</i> (1857)</li>
         <li><b>Barber</b>: <i>Piano Concerto, op. 38</i> (1960)</li>
         <li><b>Bartók</b>: <i>String Quartet #1, Sz. 40</i> (1909)</li>
@@ -725,7 +741,7 @@
         <li><b>Xenakis</b>: <i>Metastasis</i> (1954)</li>
     </ul>
     <h4 class="tier">43rd Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Barber</b>: <i>First Essay for Orchestra, op. 12</i> (1938)</li>
         <li><b>Barber</b>: <i>Second Essay for Orchestra, op. 17</i> (1942)</li>
         <li><b>Beethoven</b>: <i>String Quartet #11 in F minor, op. 95 "Serioso"</i> (1810)</li>
@@ -753,7 +769,7 @@
         <li><b>Vaughan Williams</b>: <i>Symphony #4 in F minor</i> (1934)</li>
     </ul>
     <h4 class="tier">44th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Sonatas (6) for Violin and Harpsichord, BWV 1014-1019</i> (1729?)</li>
         <li><b>Bach</b>: <i>Toccata and Fugue in D minor, BWV 538 "Dorian"</i> (1717)</li>
         <li><b>Bizet</b>: <i>L'Arlésienne</i> (1872)</li>
@@ -769,7 +785,7 @@
         <li><b>Tchaikovsky</b>: <i>Swan Lake, op. 20</i> (1876)</li>
     </ul>
     <h4 class="tier">45th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Beethoven</b>: <i>String Quartets #1-6, op. 18</i> (1800)</li>
         <li><b>Brahms</b>: <i>Rhapsodies (2), op. 79</i> (1879)</li>
         <li><b>Bruch</b>: <i>Kol Nidrei, op. 47</i> (1880)</li>
@@ -790,7 +806,7 @@
         <li><b>Webern</b>: <i>Pieces (6) for Orchestra, op. 6</i> (1909, 1920, 1928)</li>
     </ul>
     <h4 class="tier">46th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Anonymous, Spanish</b>: <i>Llibre Vermell de Montserrat</i> (late 14th century)</li>
         <li><b>Bach</b>: <i>Cantata #106 "Gottes Zeit ist die allerbeste Zeit", "Actus Tragicus"</i> (1708)</li>
         <li><b>Beethoven</b>: <i>Piano Sonata #24 in F-sharp, op. 78 "À Thérèse"</i> (1809)</li>
@@ -816,7 +832,7 @@
         <li><b>Webern</b>: <i>Passacaglia for Orchestra, op. 1</i> (1908)</li>
     </ul>
     <h4 class="tier">47th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Chopin</b>: <i>Andante spianato et Grande Polonaise brillante, op. 22</i> (1834)</li>
         <li><b>Finzi</b>: <i>Eclogue for piano and string orchestra, op. 10</i> (1956)</li>
         <li><b>Gershwin</b>: <i>Porgy and Bess</i> (1935)</li>
@@ -843,7 +859,7 @@
         <li><b>Webern</b>: <i>Variations for Orchestra, op. 30</i> (1940)</li>
     </ul>
     <h4 class="tier">48th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Adams</b>: <i>Nixon in China</i> (1987)</li>
         <li><b>Antheil</b>: <i>Ballet Mécanique</i> (1924)</li>
         <li><b>Bach</b>: <i>Cantata #198 "Lass, Fürstin, lass noch einen Strahl"</i> (1727)</li>
@@ -871,7 +887,7 @@
         <li><b>Zelenka</b>: <i>Trio Sonatas, ZWV 181</i> (c. 1721)</li>
     </ul>
     <h4 class="tier">49th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Fantasia and Fugue in G minor, BWV 542 "Great"</i> (c. 1714-20?)</li>
         <li><b>Beethoven</b>: <i>Cello Sonata #2 in G minor, op. 5/2</i> (1796)</li>
         <li><b>Beethoven</b>: <i>Piano Sonata #18 in E-flat, op. 31/3</i> (1802)</li>
@@ -898,7 +914,7 @@
         <li><b>Strauss, R.</b>: <i>Der Rosenkavalier, op. 59</i> (1911)</li>
     </ul>
     <h4 class="tier">50th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Cantata #21 "Ich hatte viel Bekümmernis"</i> (1713-23)</li>
         <li><b>Beethoven</b>: <i>Coriolan Overture, op. 62</i> (1807)</li>
         <li><b>Beethoven</b>: <i>Symphony #1 in C, op. 21</i> (1800)</li>
@@ -918,7 +934,7 @@
         <li><b>Takemitsu</b>: <i>A Flock Descends into the Pentagonal Garden</i> (1977)</li>
     </ul>
     <h4 class="tier">51st Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bax</b>: <i>Winter Legends</i> (1930)</li>
         <li><b>Brahms</b>: <i>Violin Sonata #3 in D minor, op. 108</i> (1887)</li>
         <li><b>Glass</b>: <i>Einstein on the Beach</i> (1976)</li>
@@ -938,7 +954,7 @@
         <li><b>Vaughan Williams</b>: <i>Symphony #6 in E minor</i> (1947)</li>
     </ul>
     <h4 class="tier">52nd Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bartók</b>: <i>Piano Concerto #3 in E, Sz. 119</i> (1945)</li>
         <li><b>Bizet</b>: <i>Symphony in C</i> (1855)</li>
         <li><b>Crawford Seeger</b>: <i>String Quartet</i> (1931)</li>
@@ -959,7 +975,7 @@
         <li><b>Schumann</b>: <i>Gesänge der Frühe (Songs of Dawn), op. 133</i> (1853)</li>
     </ul>
     <h4 class="tier">53rd Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Prelude and Fugue in A minor, BWV 543</i> (after c. 1730)</li>
         <li><b>Bartók</b>: <i>Bluebeard's Castle, Sz. 48</i> (1911-17)</li>
         <li><b>Beethoven</b>: <i>Piano Sonata #12 in A-flat, op. 26 "Funeral March"</i> (1801)</li>
@@ -1002,7 +1018,7 @@
         <li><b>Webern</b>: <i>Pieces (5) for Orchestra, op. 10</i> (1913)</li>
     </ul>
     <h4 class="tier">54th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Atterberg</b>: <i>Symphony #3 in D, op. 10 "Västkustbilder (West Coast Pictures)"</i> (1916)</li>
         <li><b>Bach</b>: <i>Great Eighteen Chorale Preludes, BWV 651-668 "Leipzig"</i> (1740-50)</li>
         <li><b>Bach</b>: <i>Toccata, Adagio, and Fugue in C, BWV 564</i> (before c. 1712)</li>
@@ -1040,7 +1056,7 @@
         <li><b>Strauss, R.</b>: <i>Till Eulenspiegels lustige Streiche (Till Eulenspiegel's Merry Pranks), op. 28</i> (1895)</li>
     </ul>
     <h4 class="tier">55th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Albéniz</b>: <i>Suite española, op. 47</i> (1886)</li>
         <li><b>Bach</b>: <i>Triple Concerto in A minor, BWV 1044</i> (1727 or later)</li>
         <li><b>Bax</b>: <i>November Woods</i> (1917)</li>
@@ -1076,7 +1092,7 @@
         <li><b>Weinberg</b>: <i>Violin Concerto in G minor, op. 67</i> (1960)</li>
     </ul>
     <h4 class="tier">56th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Adams</b>: <i>The Dharma at Big Sur</i> (2003)</li>
         <li><b>Anonymous, Egerton Manuscript 2615</b>: <i>Ludus Danielis (The Play of Daniel)</i> (c. 1230)</li>
         <li><b>Bach</b>: <i>Cantata #51 "Jauchzet Gott in allen Landen"</i> (1730)</li>
@@ -1116,7 +1132,7 @@
         <li><b>Zemlinsky</b>: <i>String Quartet #2, op. 15</i> (1915)</li>
     </ul>
     <h4 class="tier">57th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Abrahamsen</b>: <i>Double Concerto for Violin, Piano, and Strings</i> (2011)</li>
         <li><b>Alkan</b>: <i>Grande Sonate 'Les Quatre Âges', op. 33</i> (1847)</li>
         <li><b>Anonymous, Flemish</b>: <i>Tournai Mass</i> (c. 1330)</li>
@@ -1160,7 +1176,7 @@
         <li><b>Xenakis</b>: <i>Pléïades</i> (1978)</li>
     </ul>
     <h4 class="tier">58th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Babbitt</b>: <i>All Set</i> (1957)</li>
         <li><b>Bach</b>: <i>Cantata #56 "Ich will den Kreuzstab gerne tragen"</i> (1726)</li>
         <li><b>Bach</b>: <i>Concerto for 2 Harpsichords in C minor, BWV 1060</i> (c. 1736)</li>
@@ -1207,7 +1223,7 @@
         <li><b>Wieniawski</b>: <i>Violin Concerto #2 in D minor, op. 22</i> (1862)</li>
     </ul>
     <h4 class="tier">59th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach, C. P. E.</b>: <i>Cello Concerto #3 in A, Wq. 172</i> (1753)</li>
         <li><b>Bach</b>: <i>Flute Sonatas, BWV 1030-1035</i> (1717-37)</li>
         <li><b>Beethoven</b>: <i>Bagatelle #25 in A minor, WoO 59 "Für Elise"</i> (c. 1810)</li>
@@ -1240,7 +1256,7 @@
         <li><b>Varèse</b>: <i>Ionisation</i> (1931)</li>
     </ul>
     <h4 class="tier">60th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Albinoni</b>: <i>Concerti a Cinque, op. 9</i> (1722)</li>
         <li><b>Beethoven</b>: <i>Cello Sonata #3 in A, op. 69</i> (1808)</li>
         <li><b>Beethoven</b>: <i>Piano Sonata #6 in F, op. 10/2</i> (1797)</li>
@@ -1267,7 +1283,7 @@
         <li><b>Zelenka</b>: <i>Lamentations of Jeremiah, ZWV 53</i> (1722)</li>
     </ul>
     <h4 class="tier">61st Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Alfonso X</b>: <i>Cantiga de Santa Maria 100 "Santa Maria, strela do dia"</i> (13th cent.)</li>
         <li><b>Arensky</b>: <i>String Quartet #2 in A minor, op. 35</i> (1894)</li>
         <li><b>Bach, C.P.E.</b>: <i>Cello Concerto #2 in B-flat, Wq. 171</i> (1751)</li>
@@ -1305,7 +1321,7 @@
         <li><b>Vaughan Williams</b>: <i>Symphony #7 "Sinfonia Antartica"</i> (1952)</li>
     </ul>
     <h4 class="tier">62nd Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Cantata #211 "Schweigt stille, plaudert nicht" (Coffee Cantata)</i> (c. 1734)</li>
         <li><b>Bantock</b>: <i>Celtic Symphony</i> (1940)</li>
         <li><b>Bax</b>: <i>Elegiac Trio</i> (1916)</li>
@@ -1338,7 +1354,7 @@
         <li><b>Ten Holt</b>: <i>Canto Ostinato</i> (1976)</li>
     </ul>
     <h4 class="tier">63rd Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Abel</b>: <i>27 Pieces for Bass Viol (The Drexel Manuscript)</i> (c. 1770)</li>
         <li><b>Bach</b>: <i>Jesu, meine Freude, BWV 227</i> (before 1735)</li>
         <li><b>Barber</b>: <i>School for Scandal Overture</i> (1931)</li>
@@ -1369,7 +1385,7 @@
         <li><b>Wirén</b>: <i>Serenade for Strings, op. 11</i> (1937)</li>
     </ul>
     <h4 class="tier">64th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Albeniz</b>: <i>Asturias (Leyenda)</i> (1892)</li>
         <li><b>Alfvén</b>: <i>Swedish Rhapsody #1, op. 19 "Midsommarvaka (Midsummer Vigil)"</i> (1903)</li>
         <li><b>Bernstein</b>: <i>Symphony #2 "The Age of Anxiety"</i> (1949; rev. 1965)</li>
@@ -1392,7 +1408,7 @@
         <li><b>Zelenka</b>: <i>Missa Votiva, ZWV 18</i> (1739)</li>
     </ul>
     <h4 class="tier">65th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Abrahamsen</b>: <i>Schnee</i> (2008)</li>
         <li><b>Adam de la Halle</b>: <i>Le Jeu de Robin et de Marion</i> (c. 1282)</li>
         <li><b>Adams, J.L.</b>: <i>Become Ocean</i> (2013)</li>
@@ -1430,7 +1446,7 @@
         <li><b>Ysaÿe</b>: <i>Sonatas (6) for Solo Violin, op. 27</i> (1923)</li>
     </ul>
     <h4 class="tier">66th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Albinoni</b>: <i>Concerti a Cinque, op. 5</i> (1722)</li>
         <li><b>Atterberg</b>: <i>Symphony #2 in F, op. 6</i> (1913)</li>
         <li><b>Bach</b>: <i>Cantata #78 "Jesu, der du meine Seele"</i> (1724)</li>
@@ -1472,7 +1488,7 @@
         <li><b>Yoshimatsu</b>: <i>Symphony #4, op. 82</i> (2000)</li>
     </ul>
     <h4 class="tier">67th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Ascension Oratorio, BWV 11 "Lobet Gott In Seinen Reichen"</i> (1735)</li>
         <li><b>Bach</b>: <i>Harpsichord Concerto #4 in A, BWV 1055</i> (c. 1738)</li>
         <li><b>Bach</b>: <i>Sonatas for Viola da Gamba and Harpsichord, BWV 1027-1029</i> (1730s-40s)</li>
@@ -1506,7 +1522,7 @@
         <li><b>Walton</b>: <i>Cello Concerto</i> (1957)</li>
     </ul>
     <h4 class="tier">68th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Arnold</b>: <i>English Dances, opp. 27 & 33</i> (1951)</li>
         <li><b>Babbitt</b>: <i>Philomel</i> (1964)</li>
         <li><b>Beethoven</b>: <i>Piano Sonata #3 in C, op. 2/3</i> (1795)</li>
@@ -1545,7 +1561,7 @@
         <li><b>Wellesz</b>: <i>Symphony #1, op. 62</i> (1945)</li>
     </ul>
     <h4 class="tier">69th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Anonymous, French Manuscript 844</b>: <i>Le Chansonnier du Roi (Le Manuscrit du Roi)</i> </li>
         <li><b>Bach</b>: <i>Orgelbüchlein (Little Organ Book), BWV 599-644</i> (1708-1717, after 1727)</li>
         <li><b>Barber</b>: <i>Music for a Scene from Shelley, op. 7</i> (1933)</li>
@@ -1584,7 +1600,7 @@
         <li><b>Weinberg</b>: <i>Cello Concerto in C minor, op. 43</i> (1948)</li>
     </ul>
     <h4 class="tier">70th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Beach</b>: <i>Piano Concerto in C-sharp minor, op. 45</i> (1899)</li>
         <li><b>Berlioz</b>: <i>Roman Carnival Overture, op. 9</i> (1844)</li>
         <li><b>Brahms</b>: <i>Sonata for 2 Pianos in F minor, op. 34b</i> (1863)</li>
@@ -1625,7 +1641,7 @@
         <li><b>Zemlinsky</b>: <i>Die Seejungfrau (The Little Mermaid)</i> (1903)</li>
     </ul>
     <h4 class="tier">71st Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach</b>: <i>Toccatas for Harpsichord, BWV 910-916</i> (1707-13)</li>
         <li><b>Bartók</b>: <i>Cantata Profana, Sz. 94</i> (1930)</li>
         <li><b>Caccini, G.</b>: <i>Le nuove musiche (The New Music)</i> (1601)</li>
@@ -1654,7 +1670,7 @@
         <li><b>Young</b>: <i>The Well-Tuned Piano</i> (begun 1964)</li>
     </ul>
     <h4 class="tier">72nd Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Bach, C. P. E.</b>: <i>Magnificat in D, Wq. 215</i> (1749)</li>
         <li><b>Bax</b>: <i>In Memoriam (tone poem for orchestra), GP 179</i> (1916)</li>
         <li><b>Brahms</b>: <i>Schicksalslied, op. 54</i> (1871)</li>
@@ -1679,7 +1695,7 @@
         <li><b>Verdi</b>: <i>Il Trovatore</i> (1853)</li>
     </ul>
     <h4 class="tier">74th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Adam</b>: <i>Giselle</i> (1841)</li>
         <li><b>Andreae</b>: <i>Piano Trio #1 in F minor, op. 1</i> (1901)</li>
         <li><b>Arnold</b>: <i>Symphony #5, op. 74</i> (1961)</li>
@@ -1729,7 +1745,7 @@
         <li><b>Warlock</b>: <i>Capriol Suite</i> (1926)</li>
     </ul>
     <h4 class="tier">75th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Balakirev</b>: <i>Piano Concerto #2 in E-flat</i> (1862)</li>
         <li><b>Barber</b>: <i>Piano Sonata in E-flat minor, op.26</i> (1949)</li>
         <li><b>Bartók</b>: <i>Romanian Folk Dances, Sz. 56</i> (1915)</li>
@@ -1773,7 +1789,7 @@
         <li><b>Xenakis</b>: <i>Pithoprakta</i> (1956)</li>
     </ul>
     <h4 class="tier">76th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Adams</b>: <i>Naive and Sentimental Music</i> (1998)</li>
         <li><b>Anderson, Julian</b>: <i>Book of Hours</i> (2004)</li>
         <li><b>Babbitt</b>: <i>String Quartet #2</i> (1954)</li>
@@ -1812,7 +1828,7 @@
         <li><b>Zimmermann</b>: <i>Die Soldaten</i> (1965)</li>
     </ul>
     <h4 class="tier">77th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Arnold</b>: <i>Scottish Dances, op. 59</i> (1957)</li>
         <li><b>Bacewicz</b>: <i>Piano Quintet #2</i> (1965)</li>
         <li><b>Bach</b>: <i>Fantasia and Fugue in A minor, BWV 904</i> (before 1727)</li>
@@ -1854,7 +1870,7 @@
         <li><b>Zemlinsky</b>: <i>String Quartet #4, op. 25</i> (1936)</li>
     </ul>
     <h4 class="tier">78th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Alfven</b>: <i>Symphony #4 in C minor, op. 39 "Fran Havsbandet"</i> (1918)</li>
         <li><b>Arriaga</b>: <i>String Quartet #3 in E-flat</i> (1823)</li>
         <li><b>Bach, C.P.E.</b>: <i>Sinfonias, Wq. 183</i> (1776)</li>
@@ -1889,7 +1905,7 @@
         <li><b>Wolf</b>: <i>Italienisches Liederbuch</i> (1891, 1896)</li>
     </ul>
     <h4 class="tier">79th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Adams</b>: <i>The Chairman Dances</i> (1985)</li>
         <li><b>Bach</b>: <i>Aria variata alla maniera italiana in A minor, BWV 989</i> (1707-13)</li>
         <li><b>Bach</b>: <i>Partita in A minor for solo flute, BWV 1013</i> (1717-1723?)</li>
@@ -1936,7 +1952,7 @@
         <li><b>Wolf</b>: <i>Spanisches Liederbuch</i> (1891)</li>
     </ul>
     <h4 class="tier">80th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Beethoven</b>: <i>Leonore Overture #3, op. 72b</i> (1806)</li>
         <li><b>Beethoven</b>: <i>Piano Sonata #1 in F minor, op. 2/1</i> (1795)</li>
         <li><b>Beethoven</b>: <i>Piano Sonata #2 in A, op. 2/2</i> (1795)</li>
@@ -1956,7 +1972,7 @@
         <li><b>Varèse</b>: <i>Poème électronique</i> (1968)</li>
     </ul>
     <h4 class="tier">81st Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Adams</b>: <i>Harmonium</i> (1981)</li>
         <li><b>Arnold</b>: <i>Guitar Concerto, op. 67</i> (1959)</li>
         <li><b>Babbitt</b>: <i>Correspondences</i> (1967)</li>
@@ -2011,7 +2027,7 @@
         <li><b>Xenakis</b>: <i>Keqrops</i> (1986)</li>
     </ul>
     <h4 class="tier">82nd Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Adès</b>: <i>Violin Concerto, op. 24 "Concentric Paths"</i> (2005)</li>
         <li><b>Alfvén</b>: <i>Symphony #2 in D, op. 11</i> (1898)</li>
         <li><b>Andriessen, L.</b>: <i>De Staat (Republic)</i> (1976)</li>
@@ -2066,7 +2082,7 @@
         <li><b>Zimmerli</b>: <i>Piano Trio #1</i> (2002)</li>
     </ul>
     <h4 class="tier">83rd Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Adams</b>: <i>Shaker Loops</i> (1978, 1983)</li>
         <li><b>Arriaga</b>: <i>String Quartet #2 in A</i> (1823)</li>
         <li><b>Atterberg</b>: <i>Symphony #6 in C, op. 31 "Dollar Symphony"</i> (1928)</li>
@@ -2118,7 +2134,7 @@
         <li><b>Waldteufel</b>: <i>Les Patineurs (The Skaters' Waltz), op. 183</i> (1882)</li>
     </ul>
     <h4 class="tier">84th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Adams</b>: <i>Short Ride in a Fast Machine</i> (1986)</li>
         <li><b>Arensky</b>: <i>Piano Quintet in D, op. 51</i> (1900)</li>
         <li><b>Bach</b>: <i>Prelude (Toccata) and Fugue in E, BWV 566</i> (1708)</li>
@@ -2174,7 +2190,7 @@
         <li><b>Xenakis</b>: <i>Rebonds</i> (1988)</li>
     </ul>
     <h4 class="tier">85th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Balakirev</b>: <i>Tamara</i> (1882)</li>
         <li><b>Bartók</b>: <i>Out of Doors, Sz. 81</i> (1926)</li>
         <li><b>Bartók</b>: <i>Pictures (2) for Orchestra, Sz. 46</i> (1910)</li>
@@ -2226,7 +2242,7 @@
         <li><b>Tubin</b>: <i>Symphony #4 in A "Sinfonia Lirica"</i> (1943; rev. 1978)</li>
     </ul>
     <h4 class="tier">86th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Addinsell</b>: <i>Warsaw Concerto</i> (1941)</li>
         <li><b>Arensky</b>: <i>Piano Trio #2 in F minor, op. 73</i> (1905)</li>
         <li><b>Bartók</b>: <i>Piano Sonata, Sz. 80</i> (1926)</li>
@@ -2274,7 +2290,7 @@
         <li><b>Zemlinsky</b>: <i>Lieder (6) auf Gedichte von Maurice Maeterlinck (Six Songs after Poems by Maeterlinck), op. 13</i> (1910, 1913)</li>
     </ul>
     <h4 class="tier">87th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Arnold</b>: <i>String Quartet #2, op. 118</i> (1975)</li>
         <li><b>Bach</b>: <i>Concerto for 2 Harpsichords in C, BWV 1061</i> (1733-4)</li>
         <li><b>Bax</b>: <i>Symphony #1 in E-flat</i> (1922)</li>
@@ -2315,7 +2331,7 @@
         <li><b>Wolpe</b>: <i>Battle Piece</i> (1947)</li>
     </ul>
     <h4 class="tier">88th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Alfonso X</b>: <i>Cantiga de Santa Maria 18 "Por nos de dulta tirar"</i> (13th cent.)</li>
         <li><b>Bartók</b>: <i>Sonata for Solo Violin, Sz. 117</i> (1944)</li>
         <li><b>Bloch</b>: <i>String Quartet #2</i> (1945)</li>
@@ -2355,7 +2371,7 @@
         <li><b>Weinberg</b>: <i>Symphony #8, op. 83 "Polish Flowers"</i> (1964)</li>
     </ul>
     <h4 class="tier">89th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Adams</b>: <i>The Death of Klinghoffer</i> (1991)</li>
         <li><b>Alnæs</b>: <i>Piano Concerto in D, op. 27</i> (1913)</li>
         <li><b>Atterberg</b>: <i>Symphony #5 in D minor, op. 20 "Sinfonia funèbre"</i> (1922)</li>
@@ -2428,7 +2444,7 @@
         <li><b>Wellesz</b>: <i>Symphony #2, op. 65 "The English"</i> (1948)</li>
     </ul>
     <h4 class="tier">90th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Alkan</b>: <i>Sonatine in A minor, op. 61</i> (1861)</li>
         <li><b>Andrée</b>: <i>Piano Quintet in E minor</i> (1865)</li>
         <li><b>Bartók</b>: <i>Violin Sonata #2, Sz. 76</i> (1922)</li>
@@ -2494,7 +2510,7 @@
         <li><b>Xenakis</b>: <i>Mists</i> (1981)</li>
     </ul>
     <h4 class="tier">91st Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Alfvén</b>: <i>En Skärgårdssägen (A Legend of the Skerries), op. 20</i> (1904)</li>
         <li><b>Ashwell</b>: <i>Missa Ave Maria</i> (early 16th century)</li>
         <li><b>Atterberg</b>: <i>Symphony #1 in B minor, op. 3</i> (1912)</li>
@@ -2553,7 +2569,7 @@
         <li><b>Villa-Lobos</b>: <i>Floresta do Amazonas</i> (1958)</li>
     </ul>
     <h4 class="tier">92nd Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Arnold</b>: <i>Symphony #4, op. 71</i> (1960)</li>
         <li><b>Balakirev</b>: <i>Symphony #1 in C</i> (1898)</li>
         <li><b>Bach</b>: <i>Cantata #26 "Ach wie flüchtig, ach wie nichtig"</i> (1724)</li>
@@ -2611,7 +2627,7 @@
         <li><b>Zelenka</b>: <i>Missa dei Filii, ZWV 20</i> (c. 1740)</li>
     </ul>
     <h4 class="tier">93rd Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Salonen</b>: <i>LA Variations</i> (1996)</li>
         <li><b>Schubert</b>: <i>Piano Sonata #6 in E minor, D. 566</i> (1817)</li>
         <li><b>Yoshimatsu</b>: <i>Atom Hearts Club Duo, op. 70a</i> (1997)</li>
@@ -2697,7 +2713,7 @@
         <li><b>Willan</b>: <i>Symphony #2 in C minor</i> (1948)</li>
     </ul>
     <h4 class="tier">94th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Aho</b>: <i>Clarinet Concerto</i> (2005)</li>
         <li><b>Alfano</b>: <i>Concerto for Violin, Cello, and Piano</i> (1929)</li>
         <li><b>Amirov & Nazirova</b>: <i>Piano Concerto after Arabian Themes</i> (1957)</li>
@@ -2749,7 +2765,7 @@
         <li><b>Wolf-Ferrari</b>: <i>Sinfonia da Camera (Chamber Symphony) in B-flat, op. 8</i> (1903)</li>
     </ul>
     <h4 class="tier">95th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Adams</b>: <i>Grand Pianola Music</i> (1982)</li>
         <li><b>Aho</b>: <i>Symphony #12 "Luosto" for 2 orchestras</i> (1994)</li>
         <li><b>Alfonso X</b>: <i>Cantiga de Santa Maria 417 "Nobre don e muy preçado"</i> (13th cent.)</li>
@@ -2842,7 +2858,7 @@
         <li><b>Xenakis</b>: <i>Nomos Alpha</i> (1966)</li>
     </ul>
     <h4 class="tier">96th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Adams</b>: <i>Violin Concerto</i> (1993)</li>
         <li><b>Aho</b>: <i>Theremin Concerto "Eight Seasons"</i> (2011)</li>
         <li><b>Andriessen, L.</b>: <i>Writing to Vermeer</i> (1998)</li>
@@ -3028,7 +3044,7 @@
         <li><b>Zimmerli</b>: <i>Piano Trio #2</i> (2003)</li>
     </ul>
     <h4 class="tier">97th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Adams</b>: <i>Son of Chamber Symphony</i> (2007)</li>
         <li><b>Agricola</b>: <i>Fortuna Desperata</i> (probably before 1480)</li>
         <li><b>Bach</b>: <i>Fantasia & Fugue in C minor, BWV 562</i> (1745)</li>
@@ -3154,7 +3170,7 @@
         <li><b>Zemlinsky</b>: <i>Symphonische Gesänge (Symphonic Songs), op. 20</i> (1929)</li>
     </ul>
     <h4 class="tier">98th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Anderson, Leroy</b>: <i>Piano Concerto in C</i> </li>
         <li><b>Andreae</b>: <i>Symphony #2 in C, op. 31</i> (1920)</li>
         <li><b>Berg</b>: <i>Der Wein</i> (1929)</li>
@@ -3210,7 +3226,7 @@
         <li><b>Witte</b>: <i>Piano Quartet in A, op. 5</i> (1867)</li>
     </ul>
     <h4 class="tier">99th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Ablinger</b>: <i>points & views</i> (2014)</li>
         <li><b>Abrahamsen</b>: <i>Pieces (6) for Horn, Violin and Piano</i> (1984)</li>
         <li><b>Adès</b>: <i>Asyla, op. 17</i> (1997)</li>
@@ -3295,7 +3311,7 @@
         <li><b>Yoshimatsu</b>: <i>While an Angel Falls into a Doze..., op. 73</i> (1998)</li>
     </ul>
     <h4 class="tier">100th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Abelard</b>: <i>O quanta qualia</i> (between 1130 and 1142)</li>
         <li><b>Akses</b>: <i>Violin Concerto</i> (1972)</li>
         <li><b>Allegri</b>: <i>Missa Che fa oggi il mio sole</i> (17th cent.)</li>
@@ -3385,7 +3401,7 @@
         <li><b>Vivaldi</b>: <i>Credo, RV 591</i> (c. 1713-17)</li>
     </ul>
     <h4 class="tier">102nd Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Abelard</b>: <i>Planctus David super Saul et Ionatha [or "Jonatha" or "Jonathan"] "Dolorum solatium"</i> (12th century)</li>
         <li><b>Aho</b>: <i>Symphony for Organ "Alles Vergängliche"</i> (2007)</li>
         <li><b>Aho</b>: <i>Trombone Concerto</i> (2010)</li>
@@ -3561,7 +3577,7 @@
         <li><b>Xenakis</b>: <i>Shaar</i> (1983)</li>
     </ul>
     <h4 class="tier">103rd Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Abel</b>: <i>Symphonies, op. 7</i> (1767)</li>
         <li><b>Alfvén</b>: <i>Symphony #5 in A minor, op. 54</i> (1942-53)</li>
         <li><b>Alnar</b>: <i>Cello Concerto</i> (1943)</li>
@@ -3739,7 +3755,7 @@
         <li><b>Zorn</b>: <i>Cat o’ Nine Tails (Tex Avery Directs the Marquis de Sade)</i> </li>
     </ul>
     <h4 class="tier">104th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Adams, J.L.</b>: <i>The Wind in High Places</i> (2011)</li>
         <li><b>Adams</b>: <i>China Gates</i> (1977)</li>
         <li><b>Adams</b>: <i>Lollapalooza</i> (1995)</li>
@@ -3946,7 +3962,7 @@
         <li><b>Zorn</b>: <i>Necronomicon</i> (2004)</li>
     </ul>
     <h4 class="tier">105th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Adams</b>: <i>Dr. Atomic</i> (2005)</li>
         <li><b>Adams</b>: <i>Road Movies</i> (1995)</li>
         <li><b>Adams</b>: <i>Scheherazade.2</i> (2014)</li>
@@ -4161,7 +4177,7 @@
         <li><b>Zweers</b>: <i>Symphony #3 in B-flat "To my Fatherland"</i> (1907)</li>
     </ul>
     <h4 class="tier">106th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Adams</b>: <i>The Wound Dresser</i> (1989)</li>
         <li><b>Adès</b>: <i>Powder Her Face, op. 14</i> (1995)</li>
         <li><b>Alwyn</b>: <i>Miss Julie</i> (1977)</li>
@@ -4344,7 +4360,7 @@
         <li><b>Zimmermann</b>: <i>Requiem für einen jungen Dichter (Requiem for a Young Poet)</i> (1969)</li>
     </ul>
     <h4 class="tier">107th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Abrahamsen</b>: <i>Märchenbilder</i> (1984)</li>
         <li><b>Adès</b>: <i>Tevot</i> (2007)</li>
         <li><b>Adès</b>: <i>The Four Quarters, op. 28</i> (2010)</li>
@@ -4576,7 +4592,7 @@
         <li><b>Zwilich</b>: <i>Symphony #1 "Three Movements for Orchestra"</i> (1982)</li>
     </ul>
     <h4 class="tier">108th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Adams, J.L.</b>: <i>In the White Silence</i> (1998)</li>
         <li><b>Adès</b>: <i>Arcadiana</i> (1994)</li>
         <li><b>Aguila</b>: <i>Conga for orchestra, op. 43</i> (1994)</li>
@@ -4849,7 +4865,7 @@
         <li><b>Zimmermann</b>: <i>Musique pour les soupers du Roi Ubu</i> (1966)</li>
     </ul>
     <h4 class="tier">109th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Abe</b>: <i>Prism Rhapsody</i> (1995)</li>
         <li><b>Adámek</b>: <i>'Polednice' for Choir & Orchestra</i> (2013)</li>
         <li><b>Adams</b>: <i>City Noir</i> (2009)</li>
@@ -5103,7 +5119,7 @@
         <li><b>Żeleński</b>: <i>Piano Quartet in C minor, op. 61</i> (c. 1907)</li>
     </ul>
     <h4 class="tier">110th Tier</h4>
-    <ul>
+    <ul class="list">
         <li><b>Abel</b>: <i>Piano Concertos, op. 11</i> (1774)</li>
         <li><b>Adam</b>: <i>Si j'étais roi (If I Were King)</i> (1852)</li>
         <li><b>Adámek</b>: <i>Lo que no 'contamo'</i> (2010)</li>
