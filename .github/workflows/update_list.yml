@@ -1,0 +1,37 @@
+name: Update List
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    -cron: "0 0 * * *"
+
+env:
+  WORKFLOW_ACTION: update_list
+
+jobs:
+  update_list:
+    name: Update List
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+      - name: Checkout
+        uses: actions/checkout@v2.1.0
+      - name: Fetch Raw List
+        run: make fetch_list
+      - name: Generate JSON List
+        run: make generate_json
+      - name: Commit JSON
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "chore: update list" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@0.5.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
