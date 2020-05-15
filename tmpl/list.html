@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <link rel="stylesheet" href="https://indestructibletype.com/fonts/Bodoni/Bodoni.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/milligram">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main>
+    <h1>The Talk Classical Community's Favorite and Most Highly Recommended Works</h1>
+    <hr>
+    {% for tier in tier_list %}
+    <h4 class="tier">{{tier[0]}} Tier</h4>
+    <ul>
+      {% for work in tier[1] %}
+        <li><b>{{ work["comp"] }}</b>: <i>{{ work["title"] }}</i> {% if work["raw_yr"] %}({{ work["raw_yr"] }}){% elif work["year"] %}({{ work["year"] }}){% endif %}</li>
+      {% endfor %}
+    </ul>
+    {% endfor %}
+  </main>
+  <script src="./main.js"></script>
+</body>
+</html>

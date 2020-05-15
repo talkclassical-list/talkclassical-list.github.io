@@ -1,0 +1,231 @@
+@media (max-width: 80.0rem) {
+	main {
+		margin: 0.5em 1.5em;
+	}
+}
+
+@media (min-width: 80.0rem) {
+	main {
+		max-width: 120rem;
+		margin: 0 auto;
+	}
+}
+
+a {
+	color: #A9855B;
+}
+
+@media (min-width: 80.0rem) {
+	hr {
+		width: 48.0rem;
+	}
+}
+
+@media(max-width: 80.0rem) {
+	hr {
+		margin: 2.0rem 0;
+	}
+}
+
+hr {
+	background-color: #333333;
+	border: none;
+	height: 0.1rem;
+}
+
+label {
+	font-size: 2.2rem;
+	margin-bottom: 1.5rem;
+}
+
+@media (max-width: 80.0rem) {
+	.noUi-pips {
+		font-size: 1.0rem;
+	}
+	.noUi-value-horizontal {
+		transform: translate(-50%, 100%);
+	}
+}
+
+@media (min-width: 80.0rem) {
+	.noUi-pips {
+		font-size: 1.5rem;
+	}
+}
+
+.noUi-pips {
+	color: unset;
+	font-family: "Bodoni 6";
+}
+
+.noUi-marker-horizontal.noUi-marker {
+	background-color: #333333;
+	margin-left: -0.05rem;
+	width: 0.1rem;
+}
+
+.noUi-handle::after,
+.noUi-handle::before {
+	all: unset;
+}
+
+.noUi-horizontal {
+	height: 6px;
+}
+
+.noUi-target {
+	background-color: #A9855B44;
+	border: none;
+	box-shadow: none;
+	margin-bottom: 6rem;
+}
+
+.noUi-horizontal .noUi-handle {
+	width: 28px;
+	height: 28px;
+	right: -14px;
+	top: calc(-6px - (18px - 6px)/2);
+}
+
+.noUi-handle {
+	box-shadow: none;
+	background-color: #F8F8F8;
+	border-radius: 14px;
+	border-color: #A9855B;
+	border-width: 0.1rem;
+}
+
+.noUi-connect {
+	background-color: #A9855B;
+}
+
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background-color: #A9855B;
+	border-color: #A9855B;
+	font-family: "Inter";
+	font-weight: 500;
+	border-radius: unset;
+}
+
+.button.button-outline,
+button.button-outline,
+input[type="button"].button-outline,
+input[type="reset"].button-outline,
+input[type="submit"].button-outline {
+	color: #A9855B;
+}
+
+.button.button-outline:focus,
+.button.button-outline:hover,
+button.button-outline:focus,
+button.button-outline:hover,
+input[type='button'].button-outline:focus,
+input[type='button'].button-outline:hover,
+input[type='reset'].button-outline:focus,
+input[type='reset'].button-outline:hover,
+input[type='submit'].button-outline:focus,
+input[type='submit'].button-outline:hover {
+	border-color: #333333;
+	color: #333333;
+}
+
+h1 {
+	font-weight: 700;
+	font-family: "Bodoni 24";
+}
+
+h2 {
+	font-family: "Bodoni 24";
+}
+
+h3 {
+	font-family: "Bodoni 16";
+}
+
+h4 {
+	font-family: "Bodoni 16";
+}
+
+@media (min-width: 80.0rem) {
+	h1 {
+		font-size: 5.75rem;
+	}
+	h2 {
+		font-size: 4.5rem;
+	}
+	h3 {
+		font-size: 3.5rem;
+	}
+	h4 {
+		font-size: 2.75rem;
+	}
+	h5 {
+		font-size: 2.5rem;
+	}
+	h6, body, label {
+		font-size: 2.0rem;
+	}
+}
+
+body {
+	font-family: "Bodoni 11";
+	font-weight: 400;
+	padding-top: 1rem;
+	background-color: #f8f8f8;
+	color: #333333;
+	letter-spacing: unset;
+}
+
+#result, #rng {
+	height: 0;
+	opacity: 0;
+	transition: opacity 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+#result {
+	padding-bottom: 1em;
+	overflow-wrap: break-word;
+	hyphens: auto;
+	overflow: hidden;
+}
+
+h6.float-right {
+	padding-top: calc((3.8rem - 2.4rem)/2);
+}
+
+@media(max-width: 80.0rem) {
+	h6.float-right {
+		padding-top: calc((3.8rem - 1.5rem*1.4)/2);
+		font-size: 1.5rem;
+	}
+}
+
+.tier {
+	font-weight: 700;
+	margin-bottom: unset;
+	cursor: pointer;
+}
+
+.tier:after {
+	content: "»";
+	transform: rotate(90deg);
+	float: right;
+}
+
+.active:after {
+	content: "«";
+}
+
+ul {
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+li {
+	margin-bottom: unset;
+}

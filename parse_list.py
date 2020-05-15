@@ -2,6 +2,8 @@
 
 import json
 import re
+import jinja2
+from math import floor
 
 def parse_tier_list(name):
   works = []
@@ -39,9 +41,8 @@ def parse_tier_list(name):
               work["comp"] = comp
             # rough year determination
             year_loc = line.rfind("[")
-            year_str = line[year_loc:]
-            if year_str:
-              year_str = year_str.strip("[]")
+            if year_loc != -1:
+              year_str = line[year_loc:].strip("[]")
               year_regex = re.search(r"\d{4}", year_str)
               if year_regex:
                 work["year"] = int(year_regex.group())
@@ -58,7 +59,20 @@ def parse_tier_list(name):
             works.append(work)
   return works
 
+def ordinal(n):
+  return "%d%s" % (n,"tsnrhtdd"[(floor(n/10)%10!=1)*(n%10<4)*n%10::4])
+
 if __name__ == "__main__":
-  tier_list = parse_tier_list("list.txt")
+  works = parse_tier_list("list.txt")
   with open("public/list.json", "w") as f:
-    f.write(json.dumps(tier_list))
+    f.write(json.dumps(works))
+
+  # rework the list so templating is easier
+  tiers = set(work["tier"] for work in works)
+  tier_list = [[work for work in works if work["tier"] == tier] for tier in tiers]
+  ord_tiers = [ordinal(t+1) for t in tiers]
+  render_env = jinja2.Environment(loader=jinja2.FileSystemLoader("tmpl"))
+  render_env.trim_blocks = True
+  render_env.lstrip_blocks = True
+  with open("public/index.html", "w") as f:
+    f.write(render_env.get_template("list.html").render(tier_list=zip(ord_tiers, tier_list)))
