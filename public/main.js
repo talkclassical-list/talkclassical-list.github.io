@@ -11,7 +11,8 @@ for (const tier of tiers) {
 	});
 }
 
-document.getElementById("tier-expand").addEventListener("click", function() {
+var tier_expand = document.getElementById("tier-expand");
+tier_expand.addEventListener("click", function() {
 	let shrunk = this.classList.toggle("icon-arrows-expand-vertical1");
 	this.classList.toggle("icon-arrows-shrink-vertical1");
 	for (const tier of tiers) {
@@ -25,3 +26,4 @@ document.getElementById("tier-expand").addEventListener("click", function() {
 		}
 	}
 });
+tier_expand.addEventListener("mouseleave", e => e.target.blur());
