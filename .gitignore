@@ -1,3 +1,6 @@
+# All generated HTML files
+public/**/*.html
+
 # Downloaded raw list
 *.txt
 
