@@ -21,11 +21,11 @@
     <div class="navcontainer">
       <a href="/">Talk Classical List</a>
       <ul class="navlist">
+      {% block nav %}
         <!--<li class="navitem"><a href="about" alt="About" class="icon icon-arrows-info"></a></li>-->
         <li class="navitem"><a href="/stats" alt="Stats" class="icon icon-ecommerce-graph2"></a></li>
         <li class="navitem"><a href="/select" alt="Selector" class="icon icon-music-shuffle-button"></a></li>
-        <li class="navitem"><button id="tier-expand" alt="Expand/Collapse" class="icon icon-arrows-expand-vertical1"></button></li>
-        <!--<li class="navitem"><button id="search" alt="Search" class="icon icon-basic-magnifier"></button></li>-->
+      {% endblock %}
       </ul>
     </div>
   </nav>

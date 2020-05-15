@@ -4,6 +4,11 @@
   {{ super() }}
   <script src="./main.js" async></script>
 {% endblock %}
+{% block nav %}
+  {{ super() }}
+  <li class="navitem"><button id="tier-expand" alt="Expand/Collapse" class="icon icon-arrows-expand-vertical1"></button></li>
+  <!--<li class="navitem"><button id="search" alt="Search" class="icon icon-basic-magnifier"></button></li>-->
+{% endblock %}
 {% block content %}
   <h1>The Talk Classical Community's Favorite and Most Highly Recommended Works</h1>
   <hr>
