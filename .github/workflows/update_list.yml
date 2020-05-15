@@ -34,7 +34,7 @@ jobs:
           git add .
           git diff-index --quiet HEAD || git commit -m "chore: update list" -a
       - name: Push Changes
-        uses: ad-m/github-push-action@0.5.0
+        uses: ad-m/github-push-action@v0.5.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy
