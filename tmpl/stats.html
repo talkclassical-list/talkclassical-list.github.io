@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Stats - Talk Classical List{% endblock %}
+{% block head %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+  <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/nouislider"></script>
+  {{ super() }}
+  <script src="stats.js" async></script>
+{% endblock %}
+{% block content %}
+  <h1>List Statistics</h1>
+  <hr>
+  <h3>Top Composers</h3>
+  <div class="ct-chart ct-octave" id="top_comp"></div>
+  <h3>Date Distribution</h3>
+  <div id="date-range"></div>
+  <div class="ct-chart ct-octave" id="dates"></div>
+{% endblock %}

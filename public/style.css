@@ -316,3 +316,58 @@ nav {
 	/*box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.20);*/
 	background-color: #f8f8f8 !important;
 }
+
+.ct-series-a .ct-bar, .ct-series-a .ct-point, .ct-series-a .ct-line {
+	stroke: #A9855B;
+}
+
+.ct-series-a .ct-point {
+	stroke-width: 0.5rem;
+}
+
+.ct-series-a .ct-line {
+	stroke-width: 0.25rem;
+}
+
+.ct-series-a .ct-area {
+	fill: #A9855B;
+	fill-opacity: 1;
+}
+
+@media (max-width: 80.0rem) {
+	.ct-series-a .ct-bar {
+		stroke-width: 1rem;
+	}
+	.ct-label {
+		font-size: 1rem;
+	}
+}
+
+@media (min-width: 80.0rem) {
+	.ct-series-a .ct-bar {
+		stroke-width: 2.5rem;
+	}
+	.ct-label {
+		font-size: 2rem;
+	}
+}
+
+.ct-label {
+	color: #333333;
+}
+
+.ct-label.ct-horizontal.ct-end {
+	transform-origin: 100% 0;
+	justify-content: flex-end !important;
+	text-align: right !important;
+	transform: translate(-50%) rotate(-45deg);
+	white-space: nowrap;
+}
+
+svg.ct-chart-bar, svg.ct-chart-line{
+	overflow: visible;
+}
+
+.ct-chart {
+	margin-bottom: 5em;
+}
