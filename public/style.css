@@ -123,6 +123,14 @@ input[type="submit"].button-outline {
 	color: #A9855B;
 }
 
+.button.button-clear,
+button.button-clear,
+input[type="button"].button-clear,
+input[type="reset"].button-clear,
+input[type="submit"].button-clear {
+	color: #A9855B;
+}
+
 .button.button-outline:focus,
 .button.button-outline:hover,
 button.button-outline:focus,
@@ -305,5 +313,6 @@ nav {
 	position: fixed;
 	right: 1em;
 	bottom: 1em;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+	/*box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.20);*/
+	background-color: #f8f8f8 !important;
 }
