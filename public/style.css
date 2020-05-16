@@ -238,15 +238,12 @@ li {
 }
 
 button.icon {
-	background-color: unset;
 	border-color: unset;
 	border: none;
 	color: unset;
-	height: unset;
 	padding: unset;
 	line-height: unset;
 	margin-bottom: unset;
-	color: #A9855B;
 }
 
 button.icon:focus, button.icon:hover {
@@ -254,7 +251,7 @@ button.icon:focus, button.icon:hover {
 }
 
 .icon {
-	font-size: 1.5em;
+	transform: translateY(0.05em);
 }
 
 .icon:before {
@@ -299,7 +296,6 @@ nav {
 }
 
 .fab {
-	font-family: "Bodoni 6";
 	width: 2.25em;
 	height: 2.25em;
 	font-size: 1.5em;
@@ -311,8 +307,4 @@ nav {
 	right: 1em;
 	bottom: 1em;
 	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-}
-
-#fab-inner {
-	transform: translate(-.05em) rotate(90deg);
 }

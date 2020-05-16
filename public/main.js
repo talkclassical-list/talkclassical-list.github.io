@@ -15,7 +15,8 @@ var expanded = false;
 var tier_expand = document.getElementById("tier-expand");
 tier_expand.addEventListener("click", function() {
 	expanded = !expanded;
-	document.getElementById("fab-inner").innerHTML = expanded ? "«" : "»";
+	document.getElementById("fab-inner").classList.toggle("icon-arrows-expand-vertical1");
+	document.getElementById("fab-inner").classList.toggle("icon-arrows-shrink-vertical1");
 	for (const tier of tiers) {
 		let tier_items = tier.nextElementSibling;
 		if (!expanded) {
