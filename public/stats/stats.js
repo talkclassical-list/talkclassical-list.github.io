@@ -40,25 +40,25 @@ fetch("/list.json")
 		let get_dates = (min_tier, max_tier) => {
 			// remove dates with estimates (containing century dates)
 			let date_arr = a.filter(w => w.tier >= min_tier && w.tier <= max_tier).map(w => w.raw_yr !== undefined && w.raw_yr.includes("cent") ? undefined : w.year).filter(e => e !== undefined);
-			let date_min = Math.min.apply(Math, date_arr);
-			let date_max = Math.max.apply(Math, date_arr);
-			let date = [...Array(date_max - date_min + 1).keys()].map(i => i + date_min).filter(i => i % 10 === 0);
+			let date_min = Math.floor(Math.min.apply(Math, date_arr)/10)*10;
+			let date_max = Math.floor(Math.max.apply(Math, date_arr)/10)*10;
+			let date = [...Array((date_max - date_min)/10 + 1).keys()].map(i => i*10 + date_min);
 			let date_ct = date.map(d => date_arr.filter(i => Math.floor(i/10)*10 === d).length);
 			// extra zero bin so step interpolation works properly
 			date.push(date[date.length-1] + 10);
 			date_ct.push(0);
-			return [date, date_ct];
+			return date.map((d, i) => { return {x: d, y: date_ct[i]} });
 		};
-		let [date, date_ct] = get_dates(0, tier_max);
+		let date = get_dates(0, tier_max);
 
 		let date_chart = new Chartist.Line("#dates", {
-			labels: date,
-			series: [date_ct],
+			series: [date],
 		}, {
 			axisX: {
-				labelInterpolationFnc: function(value, index) {
-					return value % 50 === 0 ? value : null;
-				}
+				type: Chartist.FixedScaleAxis,
+				high: date[date.length-1].x,
+				low: date[0].x,
+				ticks: date.map(d => d.x).filter(i => i % 50 === 0),
 			},
 			axisY: {
 				onlyInteger: true,
@@ -72,19 +72,16 @@ fetch("/list.json")
 		[
 			["screen and (max-width: 80.0rem)", {
 				axisX: {
-					labelInterpolationFnc: function(value, index) {
-						return value % 100 === 0 ? value : null;
-					}
+					ticks: date.map(d => d.x).filter(i => i % 100 === 0),
 				}
 			}],
 		]
 		);
 		let date_tier_slider = createSlider("date-tier-range", [1, tier_max + 1], 1, [1, ...[...Array(11).keys()].map(x => (x + 1) * 10), tier_max + 1], 100/(tier_max + 1));
 		date_tier_slider.noUiSlider.on("set", new_tiers => {
-			let [date, date_ct] = get_dates(new_tiers[0] - 1, new_tiers[1] - 1);
+			let date = get_dates(new_tiers[0] - 1, new_tiers[1] - 1);
 			date_chart.update({
-				labels: date,
-				series: [date_ct],
+				series: [date],
 			});
 		});
 
