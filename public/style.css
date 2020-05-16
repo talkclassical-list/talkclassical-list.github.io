@@ -356,7 +356,7 @@ nav {
 	color: #333333;
 }
 
-.ct-label.ct-horizontal.ct-end {
+.ct-chart-bar .ct-label.ct-horizontal.ct-end {
 	transform-origin: 100% 0;
 	justify-content: flex-end !important;
 	text-align: right !important;

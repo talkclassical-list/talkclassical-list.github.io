@@ -31,12 +31,9 @@ fetch("/list.json")
 		let date_arr = a.map(w => w.raw_yr !== undefined && w.raw_yr.includes("cent") ? undefined : w.year).filter(e => e !== undefined);
 		let date_min = Math.min.apply(Math, date_arr);
 		let date_max = Math.max.apply(Math, date_arr);
-		let date = [...Array(date_max - date_min + 1).keys()].map(i => i + date_min);
-		let date_ct = []
-		for (const d of date) {
-			let ct = date_arr.filter(i => i===d).length;
-			date_ct.push(ct);
-		}
+		let date = [...Array(date_max - date_min + 1).keys()].map(i => i + date_min).filter(i => i % 10 === 0);
+		let date_ct = date.map(d => date_arr.filter(i => Math.floor(i/10)*10 === d).length);
+		console.log(date, date_ct);
 
 		let date_chart = new Chartist.Line("#dates", {
 			labels: date,
@@ -55,7 +52,7 @@ fetch("/list.json")
 			fullWidth: true,
 			showPoint: false,
 			showLine: false,
-			lineSmooth: Chartist.Interpolation.none(),
+			lineSmooth: Chartist.Interpolation.step(),
 		},
 		);
 
