@@ -268,12 +268,14 @@ nav {
 	border-bottom: .1rem solid #e3e3e3;
 	top: 0;
 	z-index: 1000;
+	height: 3em;
 }
 
 .navcontainer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	height: 100%;
 }
 
 .navlist {
@@ -284,7 +286,16 @@ nav {
 .navitem {
 	display: inline;
 	margin-bottom: 0;
-	margin-left: 0.75em;
+	margin-left: 0.5em;
+	text-transform: uppercase;
+	font-family: "Inter";
+	font-weight: 400;
+	font-size: 1.4rem;
+}
+
+.navlink {
+	color: #333333;
+	letter-spacing: 0.1rem;
 }
 
 .fab {
