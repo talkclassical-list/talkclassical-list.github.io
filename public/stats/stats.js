@@ -33,7 +33,9 @@ fetch("/list.json")
 		let date_max = Math.max.apply(Math, date_arr);
 		let date = [...Array(date_max - date_min + 1).keys()].map(i => i + date_min).filter(i => i % 10 === 0);
 		let date_ct = date.map(d => date_arr.filter(i => Math.floor(i/10)*10 === d).length);
-		console.log(date, date_ct);
+		// extra zero bin so step interpolation works properly
+		date.push(date[date.length-1] + 10);
+		date_ct.push(0);
 
 		let date_chart = new Chartist.Line("#dates", {
 			labels: date,
