@@ -3,7 +3,6 @@ var createSlider = (id, start, step, values, density) => {
 	noUiSlider.create(e,{start,connect:true,step,range:{min:start[0],max:start[1]},pips:{mode:"values",values,density}});
 	return e;
 }
-var comp_ctx = document.getElementById("composers");
 var comp_len = 20;
 
 fetch("/list.json")
@@ -11,10 +10,14 @@ fetch("/list.json")
 	.then(a => {
 		let tier_max = Math.max.apply(Math, a.map(w => w.tier));
 
-		let comp_arr = a.map(w => w.comp);
-		let comp = [...new Set(comp_arr)];
-		let comp_ct = comp.map(c => [c, comp_arr.filter(i => i === c).length]);
-		comp_ct.sort((a, b) => b[1] - a[1]);
+		let get_comps = (min_tier, max_tier) => {
+			let comp_arr = a.filter(w => w.tier >= min_tier && w.tier <= max_tier).map(w => w.comp);
+			let comp = [...new Set(comp_arr)];
+			let comp_ct = comp.map(c => [c, comp_arr.filter(i => i === c).length]);
+			comp_ct.sort((a, b) => b[1] - a[1]);
+			return comp_ct;
+		};
+		let comp_ct = get_comps(0, tier_max);
 		let comp_chart = new Chartist.Bar("#top_comp", {
 			labels: comp_ct.map(c => c[0]).slice(0, comp_len),
 			series: [comp_ct.map(c => c[1]).slice(0, comp_len)],
@@ -27,27 +30,26 @@ fetch("/list.json")
 		);
 		let comp_tier_slider = createSlider("comp-tier-range", [1, tier_max + 1], 1, [1, ...[...Array(11).keys()].map(x => (x + 1) * 10), tier_max + 1], 100/(tier_max + 1));
 		comp_tier_slider.noUiSlider.on("set", new_tiers => {
-			let [tier_slide_min, tier_slide_max] = new_tiers;
-			let filtered = a.filter(w => w.tier >= tier_slide_min && w.tier <= tier_slide_max);
-			let comp_arr = filtered.map(w => w.comp);
-			let comp = [...new Set(comp_arr)];
-			let comp_ct = comp.map(c => [c, comp_arr.filter(i => i === c).length]);
-			comp_ct.sort((a, b) => b[1] - a[1]);
+			let comp_ct = get_comps(new_tiers[0] - 1, new_tiers[1] - 1);
 			comp_chart.update({
 				labels: comp_ct.map(c => c[0]).slice(0, comp_len),
 				series: [comp_ct.map(c => c[1]).slice(0, comp_len)],
 			});
 		});
 
-		// remove dates with estimates (containing century dates)
-		let date_arr = a.map(w => w.raw_yr !== undefined && w.raw_yr.includes("cent") ? undefined : w.year).filter(e => e !== undefined);
-		let date_min = Math.min.apply(Math, date_arr);
-		let date_max = Math.max.apply(Math, date_arr);
-		let date = [...Array(date_max - date_min + 1).keys()].map(i => i + date_min).filter(i => i % 10 === 0);
-		let date_ct = date.map(d => date_arr.filter(i => Math.floor(i/10)*10 === d).length);
-		// extra zero bin so step interpolation works properly
-		date.push(date[date.length-1] + 10);
-		date_ct.push(0);
+		let get_dates = (min_tier, max_tier) => {
+			// remove dates with estimates (containing century dates)
+			let date_arr = a.filter(w => w.tier >= min_tier && w.tier <= max_tier).map(w => w.raw_yr !== undefined && w.raw_yr.includes("cent") ? undefined : w.year).filter(e => e !== undefined);
+			let date_min = Math.min.apply(Math, date_arr);
+			let date_max = Math.max.apply(Math, date_arr);
+			let date = [...Array(date_max - date_min + 1).keys()].map(i => i + date_min).filter(i => i % 10 === 0);
+			let date_ct = date.map(d => date_arr.filter(i => Math.floor(i/10)*10 === d).length);
+			// extra zero bin so step interpolation works properly
+			date.push(date[date.length-1] + 10);
+			date_ct.push(0);
+			return [date, date_ct];
+		};
+		let [date, date_ct] = get_dates(0, tier_max);
 
 		let date_chart = new Chartist.Line("#dates", {
 			labels: date,
@@ -61,7 +63,6 @@ fetch("/list.json")
 			axisY: {
 				onlyInteger: true,
 			},
-			low: 0,
 			showArea: true,
 			fullWidth: true,
 			showPoint: false,
@@ -80,14 +81,7 @@ fetch("/list.json")
 		);
 		let date_tier_slider = createSlider("date-tier-range", [1, tier_max + 1], 1, [1, ...[...Array(11).keys()].map(x => (x + 1) * 10), tier_max + 1], 100/(tier_max + 1));
 		date_tier_slider.noUiSlider.on("set", new_tiers => {
-			let [tier_slide_min, tier_slide_max] = new_tiers;
-			let filtered = a.filter(w => w.tier >= tier_slide_min && w.tier <= tier_slide_max);
-			let date_arr = filtered.map(w => w.raw_yr !== undefined && w.raw_yr.includes("cent") ? undefined : w.year).filter(e => e !== undefined);
-			let date_min = Math.min.apply(Math, date_arr);
-			let date_max = Math.max.apply(Math, date_arr);
-			let date = [...Array(date_max - date_min + 1).keys()].map(i => i + date_min).filter(i => i % 10 === 0);
-			let date_ct = date.map(d => date_arr.filter(i => Math.floor(i/10)*10 === d).length);
-
+			let [date, date_ct] = get_dates(new_tiers[0] - 1, new_tiers[1] - 1);
 			date_chart.update({
 				labels: date,
 				series: [date_ct],
@@ -111,7 +105,6 @@ fetch("/list.json")
 			//showArea: true,
 			fullWidth: true,
 			showPoint: false,
-			//showLine: false,
 		},
 		);
 
