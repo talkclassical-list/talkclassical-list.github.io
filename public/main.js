@@ -11,13 +11,14 @@ for (const tier of tiers) {
 	});
 }
 
+var expanded = false;
 var tier_expand = document.getElementById("tier-expand");
 tier_expand.addEventListener("click", function() {
-	let shrunk = this.classList.toggle("icon-arrows-expand-vertical1");
-	this.classList.toggle("icon-arrows-shrink-vertical1");
+	expanded = !expanded;
+	document.getElementById("fab-inner").innerHTML = expanded ? "«" : "»";
 	for (const tier of tiers) {
 		let tier_items = tier.nextElementSibling;
-		if (shrunk) {
+		if (!expanded) {
 			tier.classList.remove("active");
 			tier_items.style.maxHeight = null;
 		} else {

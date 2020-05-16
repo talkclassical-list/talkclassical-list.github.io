@@ -286,3 +286,22 @@ nav {
 	margin-bottom: 0;
 	margin-left: 0.75em;
 }
+
+.fab {
+	font-family: "Bodoni 6";
+	width: 2.25em;
+	height: 2.25em;
+	font-size: 1.5em;
+	border-radius: 50%;
+	padding: unset;
+	line-height: unset;
+	margin-bottom: unset;
+	position: fixed;
+	right: 1em;
+	bottom: 1em;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#fab-inner {
+	transform: translate(-.05em) rotate(90deg);
+}
