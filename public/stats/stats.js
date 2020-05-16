@@ -83,5 +83,26 @@ fetch("/list.json")
 			});
 		});
 
+		let tiers = [...Array(tier_max+1).keys()];
+		let tier_ct = tiers.map(t => a.filter(w => w.tier === t).length);
+		let tier_chart = new Chartist.Line("#tiers", {
+			labels: tiers.map(i => i + 1),
+			series: [tier_ct],
+		}, {
+			axisX: {
+				labelInterpolationFnc: function(value, index) {
+					return value % 10 === 0 ? value : null;
+				}
+			},
+			axisY: {
+				onlyInteger: true,
+			},
+			//showArea: true,
+			fullWidth: true,
+			showPoint: false,
+			//showLine: false,
+		},
+		);
+
 	});
 
