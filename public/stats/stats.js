@@ -9,15 +9,13 @@ var comp_len = 20;
 fetch("/list.json")
 	.then(r => r.json())
 	.then(a => {
+		let tier_max = Math.max.apply(Math, a.map(w => w.tier));
+
 		let comp_arr = a.map(w => w.comp);
 		let comp = [...new Set(comp_arr)];
-		let comp_ct = []
-		for (const c of comp) {
-			let ct = comp_arr.filter(i => i===c).length;
-			comp_ct.push([c, ct]);
-		}
-		comp_ct.sort((a, b) => a[1] - b[1]).reverse();
-		new Chartist.Bar("#top_comp", {
+		let comp_ct = comp.map(c => [c, comp_arr.filter(i => i === c).length]);
+		comp_ct.sort((a, b) => b[1] - a[1]);
+		let comp_chart = new Chartist.Bar("#top_comp", {
 			labels: comp_ct.map(c => c[0]).slice(0, comp_len),
 			series: [comp_ct.map(c => c[1]).slice(0, comp_len)],
 		}, {
@@ -27,6 +25,20 @@ fetch("/list.json")
 			}
 		},
 		);
+		let comp_tier_slider = createSlider("comp-tier-range", [1, tier_max + 1], 1, [1, ...[...Array(11).keys()].map(x => (x + 1) * 10), tier_max + 1], 100/(tier_max + 1));
+		comp_tier_slider.noUiSlider.on("set", new_tiers => {
+			let [tier_slide_min, tier_slide_max] = new_tiers;
+			let filtered = a.filter(w => w.tier >= tier_slide_min && w.tier <= tier_slide_max);
+			let comp_arr = filtered.map(w => w.comp);
+			let comp = [...new Set(comp_arr)];
+			let comp_ct = comp.map(c => [c, comp_arr.filter(i => i === c).length]);
+			comp_ct.sort((a, b) => b[1] - a[1]);
+			comp_chart.update({
+				labels: comp_ct.map(c => c[0]).slice(0, comp_len),
+				series: [comp_ct.map(c => c[1]).slice(0, comp_len)],
+			});
+		});
+
 		// remove dates with estimates (containing century dates)
 		let date_arr = a.map(w => w.raw_yr !== undefined && w.raw_yr.includes("cent") ? undefined : w.year).filter(e => e !== undefined);
 		let date_min = Math.min.apply(Math, date_arr);
@@ -66,9 +78,8 @@ fetch("/list.json")
 			}],
 		]
 		);
-		let tier_max = Math.max.apply(Math, a.map(w => w.tier));
-		let tier_slider = createSlider("tier-range", [1, tier_max + 1], 1, [1, ...[...Array(11).keys()].map(x => (x + 1) * 10), tier_max + 1], 100/(tier_max + 1));
-		tier_slider.noUiSlider.on("set", new_tiers => {
+		let date_tier_slider = createSlider("date-tier-range", [1, tier_max + 1], 1, [1, ...[...Array(11).keys()].map(x => (x + 1) * 10), tier_max + 1], 100/(tier_max + 1));
+		date_tier_slider.noUiSlider.on("set", new_tiers => {
 			let [tier_slide_min, tier_slide_max] = new_tiers;
 			let filtered = a.filter(w => w.tier >= tier_slide_min && w.tier <= tier_slide_max);
 			let date_arr = filtered.map(w => w.raw_yr !== undefined && w.raw_yr.includes("cent") ? undefined : w.year).filter(e => e !== undefined);
