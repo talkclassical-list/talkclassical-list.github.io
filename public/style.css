@@ -267,6 +267,7 @@ nav {
 	background-color: #f8f8f8;
 	border-bottom: .1rem solid #e3e3e3;
 	top: 0;
+	z-index: 1000;
 }
 
 .navcontainer {
