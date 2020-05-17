@@ -1,7 +1,12 @@
+var nav_height = 0;
+window.addEventListener("load", function() {
+	nav_height = document.getElementsByClassName("navcontainer")[0].clientHeight;
+});
 function isElementInViewport (el) {
 	let rect = el.getBoundingClientRect();
+	console.log(rect.top, nav_height);
 	return (
-		rect.top >= 0 &&
+		rect.top >= nav_height &&
 		rect.left >= 0 &&
 		rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
 		rect.right <= (window.innerWidth || document.documentElement.clientWidth)
@@ -38,9 +43,9 @@ tier_expand.addEventListener("click", function() {
 			tier_items.style.maxHeight = tier_items.scrollHeight + "px";
 		}
 	}
-	if (!expanded && !isElementInViewport(tiers[0])) {
+	if (!isElementInViewport(tiers[0])) {
 		tiers[nearest_tier].scrollIntoView();
-		window.scrollBy(0, -document.getElementsByClassName("navcontainer")[0].offsetHeight);
+		window.scrollBy(0, -nav_height);
 	}
 });
 tier_expand.addEventListener("mouseleave", e => e.target.blur());
