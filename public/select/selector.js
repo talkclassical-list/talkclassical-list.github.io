@@ -27,7 +27,7 @@ fetch("/list.json")
 			filtered = works.filter(i => {
 				let [begin, end] = date_range;
 				let [lowest, highest] = tier_range;
-				return !((begin != min_year || end != cur_year) && ((i.year < begin) || (i.year > end)) || (i.tier + 1 < lowest) || (i.tier + 1 > highest));
+				return !(((begin != min_year || end != cur_year) && (i.year == null || i.year < begin || i.year > end)) || (i.tier + 1 < lowest) || (i.tier + 1 > highest));
 			});
 			document.getElementById("count").textContent = filtered.length;
 		};
