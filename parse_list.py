@@ -71,6 +71,11 @@ if __name__ == "__main__":
   tiers = set(work["tier"] for work in works)
   tier_list = [[work for work in works if work["tier"] == tier] for tier in tiers]
   ord_tiers = [ordinal(t+1) for t in tiers]
+
+  # get the year range
+  years = [work.get("year", works[0]["year"]) for work in works]
+  year_range = max(years) - min(years)
+
   render_env = jinja2.Environment(loader=jinja2.FileSystemLoader("tmpl"))
   render_env.trim_blocks = True
   render_env.lstrip_blocks = True
@@ -79,4 +84,6 @@ if __name__ == "__main__":
   with open("public/select/index.html", "w") as f:
     f.write(render_env.get_template("select.html").render())
   with open("public/stats/index.html", "w") as f:
-    f.write(render_env.get_template("stats.html").render())
+    f.write(render_env.get_template("stats.html").render(num_works=len(works),
+        num_comp=len(set(work["comp"] for work in works)),
+        year_range=year_range))

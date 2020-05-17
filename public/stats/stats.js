@@ -8,7 +8,6 @@ var comp_len = 20;
 fetch("/list.json")
 	.then(r => r.json())
 	.then(a => {
-		document.getElementById("num_works").textContent = a.length;
 		let tier_max = Math.max.apply(Math, a.map(w => w.tier));
 
 		let get_comps = (min_tier, max_tier) => {
@@ -19,7 +18,6 @@ fetch("/list.json")
 			return comp_ct;
 		};
 		let comp_ct = get_comps(0, tier_max);
-		document.getElementById("num_comp").textContent = comp_ct.length;
 		let comp_chart = new Chartist.Bar("#top_comp", {
 			labels: comp_ct.map(c => c[0]).slice(0, comp_len),
 			series: [comp_ct.map(c => c[1]).slice(0, comp_len)],
@@ -54,7 +52,6 @@ fetch("/list.json")
 			return date.map((d, i) => { return {x: d, y: date_ct[i]} });
 		};
 		let date = get_dates(0, tier_max);
-		document.getElementById("year_range").textContent = date[date.length-1].x - date[0].x;
 
 		let date_chart = new Chartist.Line("#dates", {
 			series: [date],
