@@ -5,29 +5,24 @@
   <meta charset="UTF-8">
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <link rel="stylesheet" href="https://indestructibletype.com/fonts/Bodoni/Bodoni.css" type="text/css" charset="utf-8" />
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css"/>
+  <link rel="stylesheet" href="https://indestructibletype.com/fonts/Jost.css" type="text/css" charset="utf-8" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/milligram">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/linea-io/Linea-Iconset/_arrows/_ICONFONT/styles.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/linea-io/Linea-Iconset/_basic/_ICONFONT/styles.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/linea-io/Linea-Iconset/_ecommerce/_ICONFONT/styles.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/linea-io/Linea-Iconset/_music/_ICONFONT/styles.css">
   <link rel="stylesheet" href="/style.css">
   <title>{% block title %}{% endblock %} - Talk Classical List</title>
   {% endblock %}
 </head>
 <body>
   <nav>
-    <div class="navcontainer">
-      <a class="navlink" href="/">Talk Classical List</a>
-      <ul class="navlist">
-      {% block nav %}
-        <!--<li class="navitem"><a href="about" alt="About" class="icon icon-arrows-info"></a></li>-->
-        <li class="navitem"><a class="navlink" href="/stats" alt="Stats">Stats</a></li>
-        <li class="navitem"><a class="navlink" href="/select" alt="Selector">Selector</a></li>
-      {% endblock %}
-      </ul>
-    </div>
+    <ul class="navlist">
+    {% block nav %}
+      <li class="navitem"><a class="navlink" href="/" alt="Home">Home</a></li>
+      <li class="navitem"><a class="navlink" href="/about" alt="About">About</a></li>
+      <li class="navitem"><a class="navlink" href="/stats" alt="Stats">Stats</a></li>
+      <li class="navitem"><a class="navlink" href="/select" alt="Selector">Selector</a></li>
+    {% endblock %}
+    </ul>
   </nav>
   <main>
     {% block content %}{% endblock %}

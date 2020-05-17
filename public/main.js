@@ -1,6 +1,6 @@
 var nav_height = 0;
 window.addEventListener("load", function() {
-	nav_height = document.getElementsByClassName("navcontainer")[0].clientHeight;
+	nav_height = document.getElementsByClassName("navlist")[0].clientHeight;
 });
 function isElementInViewport (el) {
 	let rect = el.getBoundingClientRect();

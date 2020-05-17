@@ -1,12 +1,16 @@
 @media (max-width: 80.0rem) {
-	main, .navcontainer {
+	main, .navlist {
 		margin: 0 1.5em;
 	}
 }
 
 @media (min-width: 80.0rem) {
-	main, .navcontainer {
+	main {
 		max-width: 120rem;
+		margin: 0 auto;
+	}
+	.navlist {
+		max-width: 40rem;
 		margin: 0 auto;
 	}
 }
@@ -110,8 +114,9 @@ input[type="reset"],
 input[type="submit"] {
 	background-color: #A9855B;
 	border-color: #A9855B;
-	font-family: "Inter";
-	font-weight: 500;
+	font-family: "Jost";
+	font-size: 1.3rem;
+	font-weight: 400;
 	border-radius: unset;
 }
 
@@ -273,17 +278,14 @@ nav {
 	border-bottom: .1rem solid #e3e3e3;
 	top: 0;
 	z-index: 1000;
-	height: 3em;
-}
-
-.navcontainer {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 100%;
+	height: 2.5em;
 }
 
 .navlist {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 100%;
 	list-style: none;
 	margin-bottom: 0;
 }
@@ -291,10 +293,11 @@ nav {
 .navitem {
 	display: inline;
 	margin-bottom: 0;
-	margin-left: 0.5em;
-	font-family: "Inter";
+	padding-left: 0;
+	font-family: "Jost";
 	font-weight: 400;
-	font-size: 1.4rem;
+	font-size: 1.5rem;
+	text-transform: uppercase;
 }
 
 .navlink {
