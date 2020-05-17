@@ -62,6 +62,9 @@ def parse_tier_list(name):
 def ordinal(n):
   return "%d%s" % (n,"tsnrhtdd"[(floor(n/10)%10!=1)*(n%10<4)*n%10::4])
 
+def is_active(self, tmpl):
+  return "active" if self._TemplateReference__context.name.startswith(tmpl) else ""
+
 if __name__ == "__main__":
   works = parse_tier_list("list.txt")
   with open("public/list.json", "w") as f:
@@ -77,6 +80,7 @@ if __name__ == "__main__":
   year_range = max(years) - min(years)
 
   render_env = jinja2.Environment(loader=jinja2.FileSystemLoader("tmpl"))
+  render_env.globals["is_active"] = is_active
   render_env.trim_blocks = True
   render_env.lstrip_blocks = True
   with open("public/index.html", "w") as f:

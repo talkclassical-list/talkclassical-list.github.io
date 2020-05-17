@@ -17,10 +17,10 @@
   <nav>
     <ul class="navlist">
     {% block nav %}
-      <li class="navitem"><a class="navlink" href="/" alt="Home">Home</a></li>
-      <li class="navitem"><a class="navlink" href="/about" alt="About">About</a></li>
-      <li class="navitem"><a class="navlink" href="/stats" alt="Stats">Stats</a></li>
-      <li class="navitem"><a class="navlink" href="/select" alt="Selector">Selector</a></li>
+      <li class="navitem"><a class="navlink {{is_active(self, "list")}}" href="/" alt="Home">Home</a></li>
+      <li class="navitem"><a class="navlink {{is_active(self, "about")}}" href="/about" alt="About">About</a></li>
+      <li class="navitem"><a class="navlink {{is_active(self, "stats")}}" href="/stats" alt="Stats">Stats</a></li>
+      <li class="navitem"><a class="navlink {{is_active(self, "select")}}" href="/select" alt="Selector">Selector</a></li>
     {% endblock %}
     </ul>
   </nav>

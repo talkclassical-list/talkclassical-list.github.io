@@ -236,7 +236,7 @@ h6.float-right {
 	z-index: -1;
 }
 
-.active:after {
+.tier.active:after {
 	content: "«";
 }
 
@@ -303,6 +303,11 @@ nav {
 .navlink {
 	color: #333333;
 	letter-spacing: 0.1rem;
+}
+
+.navlink.active {
+	color: #A9855B;
+	border-bottom: 0.1rem solid #A9855B;
 }
 
 .fab {
