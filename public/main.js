@@ -32,6 +32,15 @@ tier_expand.addEventListener("click", function() {
 	document.getElementById("fab-inner").classList.toggle("icon-arrows-expand-vertical1");
 	document.getElementById("fab-inner").classList.toggle("icon-arrows-shrink-vertical1");
 	let nearest_tier = Array.from(tiers).findIndex(isElementInViewport);
+	let next_nearest = false;
+	if (nearest_tier == -1) {
+		nearest_tier = Array.from(tiers).reduce((min, x, i, a) => {
+			let xtop = x.getBoundingClientRect().top;
+			let mintop = a[min].getBoundingClientRect().top;
+			return (xtop > mintop && xtop < 0) ? i : min;
+		}, 0);
+		next_nearest = true;
+	}
 	let offset = tiers[nearest_tier].getBoundingClientRect().top;
 	for (const tier of tiers) {
 		let tier_items = tier.nextElementSibling;
@@ -45,7 +54,7 @@ tier_expand.addEventListener("click", function() {
 	}
 	if (!isElementInViewport(tiers[0])) {
 		tiers[nearest_tier].scrollIntoView();
-		window.scrollBy(0, -offset);
+		window.scrollBy(0, -(next_nearest && !expanded ? nav_height : offset));
 	}
 });
 tier_expand.addEventListener("mouseleave", e => e.target.blur());
