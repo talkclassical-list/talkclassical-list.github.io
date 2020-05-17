@@ -1,26 +1,29 @@
 {% extends "base.html" %}
+
 {% block title %}Stats{% endblock %}
+
 {% block head %}
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-  <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/nouislider"></script>
-  {{ super() }}
-  <script src="stats.js" async></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nouislider"></script>
+{{ super() }}
+<script src="stats.js" async></script>
 {% endblock %}
+
 {% block content %}
-  <h1>List Statistics</h1>
-  <hr>
-  <h3>Summary</h3>
-  <p>The list has {{ num_works }} works by {{ num_comp }} composers over a span of {{ year_range }} years.</p>
-  <h3>Top Composers</h3>
-  <label for="comp-tier-range">Tiers</label>
-  <div id="comp-tier-range"></div>
-  <div class="ct-chart ct-octave" id="top_comp"></div>
-  <h3>Date Distribution</h3>
-  <label for="date-tier-range">Tiers</label>
-  <div id="date-tier-range"></div>
-  <div class="ct-chart ct-octave" id="dates"></div>
-  <h3>Tier Distribution</h3>
-  <div class="ct-chart ct-octave" id="tiers"></div>
+	<h1>List Statistics</h1>
+	<hr>
+	<h3>Summary</h3>
+	<p>The list has {{ num_works }} works by {{ num_comp }} composers over a span of {{ year_range }} years.</p>
+	<h3>Top Composers</h3>
+	<label for="comp-tier-range">Tiers</label>
+	<div id="comp-tier-range"></div>
+	<div class="ct-chart ct-octave" id="top_comp"></div>
+	<h3>Date Distribution</h3>
+	<label for="date-tier-range">Tiers</label>
+	<div id="date-tier-range"></div>
+	<div class="ct-chart ct-octave" id="dates"></div>
+	<h3>Tier Distribution</h3>
+	<div class="ct-chart ct-octave" id="tiers"></div>
 {% endblock %}

@@ -1,23 +1,27 @@
 {% extends "base.html" %}
+
 {% block title %}List{% endblock %}
+
 {% block head %}
-  {{ super() }}
-  <script src="./main.js" async></script>
+{{ super() }}
+<script src="./main.js" async></script>
 {% endblock %}
+
 {% block nav %}
-  {{ super() }}
-  <!--<li class="navitem"><button id="search" alt="Search" class="icon icon-basic-magnifier"></button></li>-->
+{{ super() }}
+<!--<li class="navitem"><button id="search" alt="Search" class="icon icon-basic-magnifier"></button></li>-->
 {% endblock %}
+
 {% block content %}
-  <h1>The Talk Classical Community's Favorite and Most Highly Recommended Works</h1>
-  <hr>
-  <button class="fab button-outline" id="tier-expand"><div class="icon icon-arrows-expand-vertical1" id="fab-inner"></div></button>
-  {% for tier in tier_list %}
-  <h4 class="tier">{{tier[0]}} Tier</h4>
-  <ul class="list">
-    {% for work in tier[1] %}
-      <li><b>{{ work["comp"] }}</b>: <i>{{ work["title"] }}</i> {% if work["raw_yr"] %}({{ work["raw_yr"] }}){% elif work["year"] %}({{ work["year"] }}){% endif %}</li>
-    {% endfor %}
-  </ul>
-  {% endfor %}
+	<h1>The Talk Classical Community's Favorite and Most Highly Recommended Works</h1>
+	<hr>
+	<button class="fab button-outline" id="tier-expand"><div class="icon icon-arrows-expand-vertical1" id="fab-inner"></div></button>
+	{% for tier in tier_list %}
+	<h4 class="tier">{{tier[0]}} Tier</h4>
+	<ul class="list">
+	{% for work in tier[1] %}
+		<li><b>{{ work["comp"] }}</b>: <i>{{ work["title"] }}</i> {% if work["raw_yr"] %}({{ work["raw_yr"] }}){% elif work["year"] %}({{ work["year"] }}){% endif %}</li>
+	{% endfor %}
+	</ul>
+	{% endfor %}
 {% endblock %}
