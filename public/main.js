@@ -4,7 +4,6 @@ window.addEventListener("load", function() {
 });
 function isElementInViewport (el) {
 	let rect = el.getBoundingClientRect();
-	console.log(rect.top, nav_height);
 	return (
 		rect.top >= nav_height &&
 		rect.left >= 0 &&
@@ -33,6 +32,7 @@ tier_expand.addEventListener("click", function() {
 	document.getElementById("fab-inner").classList.toggle("icon-arrows-expand-vertical1");
 	document.getElementById("fab-inner").classList.toggle("icon-arrows-shrink-vertical1");
 	let nearest_tier = Array.from(tiers).findIndex(isElementInViewport);
+	let offset = tiers[nearest_tier].getBoundingClientRect().top;
 	for (const tier of tiers) {
 		let tier_items = tier.nextElementSibling;
 		if (!expanded) {
@@ -45,7 +45,7 @@ tier_expand.addEventListener("click", function() {
 	}
 	if (!isElementInViewport(tiers[0])) {
 		tiers[nearest_tier].scrollIntoView();
-		window.scrollBy(0, -nav_height);
+		window.scrollBy(0, -offset);
 	}
 });
 tier_expand.addEventListener("mouseleave", e => e.target.blur());
