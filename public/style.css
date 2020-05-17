@@ -357,7 +357,7 @@ nav {
 }
 
 .ct-chart-bar .ct-label.ct-horizontal.ct-end {
-	transform-origin: 100% 0;
+	transform-origin: 100% 50%;
 	justify-content: flex-end !important;
 	text-align: right !important;
 	transform: translate(-50%) rotate(-45deg);
@@ -369,6 +369,7 @@ svg.ct-chart-bar, svg.ct-chart-line{
 }
 
 .ct-chart {
+	margin-top: 5em;
 	margin-bottom: 5em;
 }
 

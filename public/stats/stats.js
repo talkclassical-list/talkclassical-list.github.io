@@ -22,10 +22,12 @@ fetch("/list.json")
 			labels: comp_ct.map(c => c[0]).slice(0, comp_len),
 			series: [comp_ct.map(c => c[1]).slice(0, comp_len)],
 		}, {
+			chartPadding: 0,
 			axisY: {
 				type: Chartist.AutoScaleAxis,
 				onlyInteger: true,
-			}
+				offset: 15,
+			},
 		},
 		);
 		let comp_tier_slider = createSlider("comp-tier-range", [1, tier_max + 1], 1, [1, ...[...Array(11).keys()].map(x => (x + 1) * 10), tier_max + 1], 100/(tier_max + 1));
@@ -54,6 +56,7 @@ fetch("/list.json")
 		let date_chart = new Chartist.Line("#dates", {
 			series: [date],
 		}, {
+			chartPadding: 0,
 			axisX: {
 				type: Chartist.FixedScaleAxis,
 				high: date[date.length-1].x,
@@ -62,6 +65,7 @@ fetch("/list.json")
 			},
 			axisY: {
 				onlyInteger: true,
+				offset: 15,
 			},
 			showArea: true,
 			fullWidth: true,
@@ -91,6 +95,7 @@ fetch("/list.json")
 			labels: tiers.map(i => i + 1),
 			series: [tier_ct],
 		}, {
+			chartPadding: 0,
 			axisX: {
 				labelInterpolationFnc: function(value, index) {
 					return value % 10 === 0 ? value : null;
@@ -98,6 +103,7 @@ fetch("/list.json")
 			},
 			axisY: {
 				onlyInteger: true,
+				offset: 15,
 			},
 			//showArea: true,
 			fullWidth: true,
