@@ -68,7 +68,7 @@ def is_active(self, tmpl):
 if __name__ == "__main__":
   works = parse_tier_list("list.txt")
   with open("public/list.json", "w") as f:
-    f.write(json.dumps(works))
+    json.dump(works, f, ensure_ascii=False, separators=(",", ":"))
 
   # rework the list so templating is easier
   tiers = set(work["tier"] for work in works)
