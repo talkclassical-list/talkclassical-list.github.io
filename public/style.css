@@ -241,8 +241,11 @@ h6.float-right {
 }
 
 .list {
-	max-height: 0;
-	overflow: hidden;
+	display: none;
+}
+
+.list.active {
+	display: block;
 }
 
 li {
