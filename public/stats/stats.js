@@ -39,77 +39,46 @@ fetch("/list.json")
 			});
 		});
 
-		let get_dates = (min_tier, max_tier) => {
+		let get_dates = () => {
 			// remove dates with estimates (containing century dates)
-			let date_arr = a.filter(w => w.tier >= min_tier && w.tier <= max_tier).map(w => w.raw_yr !== undefined && w.raw_yr.includes("cent") ? undefined : w.year).filter(e => e !== undefined);
-			let date_min = Math.floor(Math.min.apply(Math, date_arr)/10)*10;
-			let date_max = Math.floor(Math.max.apply(Math, date_arr)/10)*10;
-			let date = [...Array((date_max - date_min)/10 + 1).keys()].map(i => i*10 + date_min);
-			let date_ct = date.map(d => date_arr.filter(i => Math.floor(i/10)*10 === d).length);
-			// extra zero bin so step interpolation works properly
-			date.push(date[date.length-1] + 10);
-			date_ct.push(0);
-			return date.map((d, i) => { return {x: d, y: date_ct[i]} });
+			let date = a.filter(w => w.year !== undefined && (w.raw_yr === undefined || !w.raw_yr.includes("cent")));
+			return date.map(d => { return {x: d.year, y: d.tier + 1} });
 		};
-		let date = get_dates(0, tier_max);
+		let date = get_dates();
+		let date_min = Math.floor(Math.min.apply(Math, date.map(d => d.x))/10)*10;
+		let date_max = Math.ceil(Math.max.apply(Math, date.map(d => d.x))/10)*10;
+		console.log(date_max, date_min);
+		let dates = [...Array(date_max-date_min+1).keys()].map(i => i+date_min);
 
 		let date_chart = new Chartist.Line("#dates", {
 			series: [date],
 		}, {
 			chartPadding: 0,
-			axisX: {
-				type: Chartist.FixedScaleAxis,
-				high: date[date.length-1].x,
-				low: date[0].x,
-				ticks: date.map(d => d.x).filter(i => i % 50 === 0),
-			},
 			axisY: {
+				type: Chartist.FixedScaleAxis,
+				high: tier_max + 1,
+				low: 1,
+				ticks: [...Array(tier_max).keys()].map(i => i+1).filter(i => i % 10 === 0),
 				onlyInteger: true,
 				offset: 15,
 			},
-			showArea: true,
-			fullWidth: true,
-			showPoint: false,
+			axisX: {
+				type: Chartist.FixedScaleAxis,
+				high: date_max,
+				low: date_min,
+				ticks: dates.filter(i => i % 50 === 0),
+			},
+			showArea: false,
+			showPoint: true,
 			showLine: false,
-			lineSmooth: Chartist.Interpolation.step(),
 		},
 		[
 			["screen and (max-width: 80.0rem)", {
 				axisX: {
-					ticks: date.map(d => d.x).filter(i => i % 100 === 0),
-				}
+					ticks: dates.filter(i => i % 100 === 0),
+				},
 			}],
 		]
 		);
-		let date_tier_slider = createSlider("date-tier-range", [1, tier_max + 1], 1, [1, ...[...Array(11).keys()].map(x => (x + 1) * 10), tier_max + 1], 100/(tier_max + 1));
-		date_tier_slider.noUiSlider.on("set", new_tiers => {
-			let date = get_dates(new_tiers[0] - 1, new_tiers[1] - 1);
-			date_chart.update({
-				series: [date],
-			});
-		});
-
-		let tiers = [...Array(tier_max+1).keys()];
-		let tier_ct = tiers.map(t => a.filter(w => w.tier === t).length);
-		let tier_chart = new Chartist.Line("#tiers", {
-			labels: tiers.map(i => i + 1),
-			series: [tier_ct],
-		}, {
-			chartPadding: 0,
-			axisX: {
-				labelInterpolationFnc: function(value, index) {
-					return value % 10 === 0 ? value : null;
-				}
-			},
-			axisY: {
-				onlyInteger: true,
-				offset: 15,
-			},
-			//showArea: true,
-			fullWidth: true,
-			showPoint: false,
-		},
-		);
-
 	});
 

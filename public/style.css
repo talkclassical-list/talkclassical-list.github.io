@@ -334,6 +334,7 @@ nav {
 
 .ct-series-a .ct-point {
 	stroke-width: 0.5rem;
+	stroke-opacity: 0.5;
 }
 
 .ct-series-a .ct-line {
@@ -346,6 +347,9 @@ nav {
 }
 
 @media (max-width: 80.0rem) {
+	.ct-series-a .ct-point {
+		stroke-width: 0.3rem;
+	}
 	.ct-series-a .ct-bar {
 		stroke-width: 1rem;
 	}
@@ -379,8 +383,11 @@ svg.ct-chart-bar, svg.ct-chart-line{
 	overflow: visible;
 }
 
+#comp-tier-range {
+	margin-bottom: 5em;
+}
+
 .ct-chart {
-	margin-top: 5em;
 	margin-bottom: 5em;
 }
 
