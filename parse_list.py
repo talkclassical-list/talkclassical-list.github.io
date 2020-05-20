@@ -3,7 +3,13 @@
 import json
 import re
 import jinja2
+import string
 from math import floor
+from collections import Counter
+import subprocess
+
+import networkx as nx
+from graphviz import Graph
 
 def parse_tier_list(name):
   works = []
@@ -59,6 +65,70 @@ def parse_tier_list(name):
             works.append(work)
   return works
 
+def generate_word_trees(all_titles, min_size, min_freq):
+  num_trees = 50
+
+  word_tree = [nx.DiGraph() for _ in range(num_trees)]
+  def get_word_tree(phrase_list, n, min_ct, matching_words=[], i=0, tree_idx=0):
+    """
+    Generates a word tree from a given list of phrases starting from the first word.
+    Recursively searches for matching words in the phrase list.
+    """
+    words = [t[i] for t in phrase_list if \
+        i == 0 or (i > 0 and len(t) > i and all(t[j] == word for j, word in enumerate(matching_words)))]
+    top_words = [(w,c) for w,c in Counter(words).most_common(n) if c >= min_ct]
+    for j, (w, ct) in enumerate(top_words):
+      if i == 0:
+        tree_idx = j
+        word_tree[tree_idx].add_node(w, ct=ct)
+      else:
+        word_tree[tree_idx].add_edge(matching_words[-1], w)
+        word_tree[tree_idx].nodes[w]["ct"] = word_tree[tree_idx].nodes[w].get("ct", 0) + ct
+      get_word_tree(phrase_list, None, min_ct, matching_words + [w], i+1, tree_idx)
+    return
+
+  tree = get_word_tree(all_titles, num_trees, min_freq)
+  word_tree = list(filter(lambda t: len(t.nodes()) > min_size, word_tree))
+
+  def font_scale(x):
+    o = 0.3
+    return (1-o)*x + o
+
+  outputs = []
+  for idx, wt in enumerate(word_tree):
+    # generate depths
+    root = [n for n,d in wt.in_degree() if d==0][0]
+    for n in wt.nodes:
+      if n == root:
+        wt.nodes[n]["depth"] = 0
+      else:
+        # find the longest path to a node (the "depth")
+        wt.nodes[n]["depth"] = max(map(len, nx.all_simple_paths(wt, root, n)))
+
+    tr = Graph(root, node_attr={"shape": "plaintext", "fontname": "Bodoni* 11 Medium", "color": "#333333"},
+        edge_attr={"color": "#aaaaaa"}, strict=True)
+    tr.attr(rankdir="LR")
+    tr.attr(concentrate="true")
+    if len(wt.nodes) > 20:
+      tr.attr(ratio="0.5")
+    else:
+      tr.attr(ratio="0.2")
+    fontsize=40
+    # calculate node sizes based on its neighbours with same depth
+    for n,ndata in wt.nodes(data=True):
+      depth_sz = max(n2["ct"] for _,n2 in wt.nodes(data=True) if n2["depth"] == ndata["depth"])
+      tr.node(n, fontsize=str(fontsize*font_scale(ndata["ct"]/depth_sz)))
+    for n1,n2 in wt.edges():
+      tr.edge(n1+":e",n2+":w")
+
+    # generate in pdf, then convert to svg to keep the custom fonts
+    gen_tr = tr.render(format="pdf", cleanup=True)
+    output = root + ".svg"
+    subprocess.call(["pdf2svg", gen_tr, "public/" + output])
+    print("generated", root)
+    outputs.append(output)
+  return outputs
+
 def ordinal(n):
   return "%d%s" % (n,"tsnrhtdd"[(floor(n/10)%10!=1)*(n%10<4)*n%10::4])
 
@@ -79,6 +149,10 @@ if __name__ == "__main__":
   years = [work.get("year", works[0]["year"]) for work in works]
   year_range = max(years) - min(years)
 
+  all_titles = [[word.strip(",\"") for word in work["title"].split()] for work in works]
+
+  trees = generate_word_trees(all_titles, 10, 3)
+
   render_env = jinja2.Environment(loader=jinja2.FileSystemLoader("tmpl"))
   render_env.globals["is_active"] = is_active
   render_env.trim_blocks = True
@@ -90,4 +164,4 @@ if __name__ == "__main__":
   with open("public/stats/index.html", "w") as f:
     f.write(render_env.get_template("stats.html").render(num_works=len(works),
         num_comp=len(set(work["comp"] for work in works)),
-        year_range=year_range))
+        year_range=year_range, trees=trees))

@@ -19,8 +19,15 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: "3.x"
+      - name: Setup Graphviz
+        uses: ts-graphviz/setup-graphviz@v1
       - name: Install Deps
-        run: pip install jinja2
+        run: |
+          pip install jinja2 graphviz networkx
+          sudo apt update
+          sudo apt install pdf2svg
+          mkdir -p ~/.local/share/fonts
+          curl -o ~/.local/share/fonts/Bodoni-11-Medium.otf https://indestructibletype.com/fonts/Bodoni/Bodoni-11-Medium.otf
       - name: Checkout
         uses: actions/checkout@v2
       - name: Fetch Raw List

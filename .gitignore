@@ -1,5 +1,7 @@
 # All generated files
+*.svg
 *.json
+*.gv*
 public/**/*.html
 
 # Downloaded raw list

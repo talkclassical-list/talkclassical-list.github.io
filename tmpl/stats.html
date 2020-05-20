@@ -22,4 +22,9 @@
 	<div class="ct-chart ct-octave" id="top_comp"></div>
 	<h3>Date-Tier Distribution</h3>
 	<div class="ct-chart ct-octave" id="dates"></div>
+	<h3>Word Trees</h3>
+	<p>Below are some of the most common title structures. Words are shown if they appear with the given structure at least three times. The size of each word corresponds to their relative frequency.</p>
+	{% for tree in trees %}
+	<img src="/{{ tree }}">
+	{% endfor %}
 {% endblock %}
