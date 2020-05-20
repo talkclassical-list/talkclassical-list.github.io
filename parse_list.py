@@ -108,6 +108,7 @@ def generate_word_trees(all_titles, min_size, min_freq):
     tr = Graph(root, node_attr={"shape": "plaintext", "fontname": "Bodoni* 11 Medium", "color": "#333333"},
         edge_attr={"color": "#aaaaaa"}, strict=True)
     tr.attr(rankdir="LR")
+    tr.attr(bgcolor="#f8f8f8")
     tr.attr(concentrate="true")
     if len(wt.nodes) > 20:
       tr.attr(ratio="0.5")
