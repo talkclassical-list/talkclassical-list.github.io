@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "Jost";
-	src: url("/fonts/Jost-400.woff2") format("woff2");
+	src: url("fonts/Jost-400.woff2") format("woff2");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -8,7 +8,7 @@
 
 @font-face {
 	font-family: "Bodoni 6";
-	src: url("/fonts/Bodoni-06-Book.woff2") format("woff2");
+	src: url("fonts/Bodoni-06-Book.woff2") format("woff2");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -16,7 +16,7 @@
 
 @font-face {
 	font-family: "Bodoni 6";
-	src: url("/fonts/Bodoni-06-Book-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-06-Book-Italic.woff2") format("woff2");
 	font-weight: 400;
 	font-style: italic;
 	font-display: swap;
@@ -24,7 +24,7 @@
 
 @font-face {
 	font-family: "Bodoni 6";
-	src: url("/fonts/Bodoni-06-Medium.woff2") format("woff2");
+	src: url("fonts/Bodoni-06-Medium.woff2") format("woff2");
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
@@ -32,7 +32,7 @@
 
 @font-face {
 	font-family: "Bodoni 6";
-	src: url("/fonts/Bodoni-06-Medium-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-06-Medium-Italic.woff2") format("woff2");
 	font-weight: 500;
 	font-style: italic;
 	font-display: swap;
@@ -40,7 +40,7 @@
 
 @font-face {
 	font-family: "Bodoni 6";
-	src: url("/fonts/Bodoni-06-Bold.woff2") format("woff2");
+	src: url("fonts/Bodoni-06-Bold.woff2") format("woff2");
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -48,7 +48,7 @@
 
 @font-face {
 	font-family: "Bodoni 6";
-	src: url("/fonts/Bodoni-06-Bold-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-06-Bold-Italic.woff2") format("woff2");
 	font-weight: 700;
 	font-style: italic;
 	font-display: swap;
@@ -56,7 +56,7 @@
 
 @font-face {
 	font-family: "Bodoni 6";
-	src: url("/fonts/Bodoni-06-Fatface.woff2") format("woff2");
+	src: url("fonts/Bodoni-06-Fatface.woff2") format("woff2");
 	font-weight: 900;
 	font-style: normal;
 	font-display: swap;
@@ -64,7 +64,7 @@
 
 @font-face {
 	font-family: "Bodoni 6";
-	src: url("/fonts/Bodoni-06-Fatface-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-06-Fatface-Italic.woff2") format("woff2");
 	font-weight: 900;
 	font-style: italic;
 	font-display: swap;
@@ -72,7 +72,7 @@
 
 @font-face {
 	font-family: "Bodoni 06";
-	src: url("/fonts/Bodoni-06-Book.woff2") format("woff2");
+	src: url("fonts/Bodoni-06-Book.woff2") format("woff2");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -80,7 +80,7 @@
 
 @font-face {
 	font-family: "Bodoni 06";
-	src: url("/fonts/Bodoni-06-Book-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-06-Book-Italic.woff2") format("woff2");
 	font-weight: 400;
 	font-style: italic;
 	font-display: swap;
@@ -88,7 +88,7 @@
 
 @font-face {
 	font-family: "Bodoni 06";
-	src: url("/fonts/Bodoni-06-Medium.woff2") format("woff2");
+	src: url("fonts/Bodoni-06-Medium.woff2") format("woff2");
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
@@ -96,7 +96,7 @@
 
 @font-face {
 	font-family: "Bodoni 06";
-	src: url("/fonts/Bodoni-06-Medium-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-06-Medium-Italic.woff2") format("woff2");
 	font-weight: 500;
 	font-style: italic;
 	font-display: swap;
@@ -104,7 +104,7 @@
 
 @font-face {
 	font-family: "Bodoni 06";
-	src: url("/fonts/Bodoni-06-Bold.woff2") format("woff2");
+	src: url("fonts/Bodoni-06-Bold.woff2") format("woff2");
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -112,7 +112,7 @@
 
 @font-face {
 	font-family: "Bodoni 06";
-	src: url("/fonts/Bodoni-06-Bold-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-06-Bold-Italic.woff2") format("woff2");
 	font-weight: 700;
 	font-style: italic;
 	font-display: swap;
@@ -120,7 +120,7 @@
 
 @font-face {
 	font-family: "Bodoni 06";
-	src: url("/fonts/Bodoni-06-Fatface.woff2") format("woff2");
+	src: url("fonts/Bodoni-06-Fatface.woff2") format("woff2");
 	font-weight: 900;
 	font-style: normal;
 	font-display: swap;
@@ -128,7 +128,7 @@
 
 @font-face {
 	font-family: "Bodoni 06";
-	src: url("/fonts/Bodoni-06-Fatface-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-06-Fatface-Italic.woff2") format("woff2");
 	font-weight: 900;
 	font-style: italic;
 	font-display: swap;
@@ -136,7 +136,7 @@
 
 @font-face {
 	font-family: "Bodoni 11";
-	src: url("/fonts/Bodoni-11-Book.woff2") format("woff2");
+	src: url("fonts/Bodoni-11-Book.woff2") format("woff2");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -144,7 +144,7 @@
 
 @font-face {
 	font-family: "Bodoni 11";
-	src: url("/fonts/Bodoni-11-Book-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-11-Book-Italic.woff2") format("woff2");
 	font-weight: 400;
 	font-style: italic;
 	font-display: swap;
@@ -152,7 +152,7 @@
 
 @font-face {
 	font-family: "Bodoni 11";
-	src: url("/fonts/Bodoni-11-Medium.woff2") format("woff2");
+	src: url("fonts/Bodoni-11-Medium.woff2") format("woff2");
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
@@ -160,7 +160,7 @@
 
 @font-face {
 	font-family: "Bodoni 11";
-	src: url("/fonts/Bodoni-11-Medium-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-11-Medium-Italic.woff2") format("woff2");
 	font-weight: 500;
 	font-style: italic;
 	font-display: swap;
@@ -168,7 +168,7 @@
 
 @font-face {
 	font-family: "Bodoni 11";
-	src: url("/fonts/Bodoni-11-Bold.woff2") format("woff2");
+	src: url("fonts/Bodoni-11-Bold.woff2") format("woff2");
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -176,7 +176,7 @@
 
 @font-face {
 	font-family: "Bodoni 11";
-	src: url("/fonts/Bodoni-11-Bold-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-11-Bold-Italic.woff2") format("woff2");
 	font-weight: 700;
 	font-style: italic;
 	font-display: swap;
@@ -184,7 +184,7 @@
 
 @font-face {
 	font-family: "Bodoni 11";
-	src: url("/fonts/Bodoni-11-Fatface.woff2") format("woff2");
+	src: url("fonts/Bodoni-11-Fatface.woff2") format("woff2");
 	font-weight: 900;
 	font-style: normal;
 	font-display: swap;
@@ -192,7 +192,7 @@
 
 @font-face {
 	font-family: "Bodoni 11";
-	src: url("/fonts/Bodoni-11-Fatface-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-11-Fatface-Italic.woff2") format("woff2");
 	font-weight: 900;
 	font-style: italic;
 	font-display: swap;
@@ -200,7 +200,7 @@
 
 @font-face {
 	font-family: "Bodoni 16";
-	src: url("/fonts/Bodoni-16-Book.woff2") format("woff2");
+	src: url("fonts/Bodoni-16-Book.woff2") format("woff2");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -208,7 +208,7 @@
 
 @font-face {
 	font-family: "Bodoni 16";
-	src: url("/fonts/Bodoni-16-Book-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-16-Book-Italic.woff2") format("woff2");
 	font-weight: 400;
 	font-style: italic;
 	font-display: swap;
@@ -216,7 +216,7 @@
 
 @font-face {
 	font-family: "Bodoni 16";
-	src: url("/fonts/Bodoni-16-Medium.woff2") format("woff2");
+	src: url("fonts/Bodoni-16-Medium.woff2") format("woff2");
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
@@ -224,7 +224,7 @@
 
 @font-face {
 	font-family: "Bodoni 16";
-	src: url("/fonts/Bodoni-16-Medium-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-16-Medium-Italic.woff2") format("woff2");
 	font-weight: 500;
 	font-style: italic;
 	font-display: swap;
@@ -232,7 +232,7 @@
 
 @font-face {
 	font-family: "Bodoni 16";
-	src: url("/fonts/Bodoni-16-Bold.woff2") format("woff2");
+	src: url("fonts/Bodoni-16-Bold.woff2") format("woff2");
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -240,7 +240,7 @@
 
 @font-face {
 	font-family: "Bodoni 16";
-	src: url("/fonts/Bodoni-16-Bold-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-16-Bold-Italic.woff2") format("woff2");
 	font-weight: 700;
 	font-style: italic;
 	font-display: swap;
@@ -248,7 +248,7 @@
 
 @font-face {
 	font-family: "Bodoni 16";
-	src: url("/fonts/Bodoni-16-Fatface.woff2") format("woff2");
+	src: url("fonts/Bodoni-16-Fatface.woff2") format("woff2");
 	font-weight: 900;
 	font-style: normal;
 	font-display: swap;
@@ -256,7 +256,7 @@
 
 @font-face {
 	font-family: "Bodoni 16";
-	src: url("/fonts/Bodoni-16-Fatface-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-16-Fatface-Italic.woff2") format("woff2");
 	font-weight: 900;
 	font-style: italic;
 	font-display: swap;
@@ -264,7 +264,7 @@
 
 @font-face {
 	font-family: "Bodoni 24";
-	src: url("/fonts/Bodoni-24-Book.woff2") format("woff2");
+	src: url("fonts/Bodoni-24-Book.woff2") format("woff2");
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -272,7 +272,7 @@
 
 @font-face {
 	font-family: "Bodoni 24";
-	src: url("/fonts/Bodoni-24-Book-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-24-Book-Italic.woff2") format("woff2");
 	font-weight: 400;
 	font-style: italic;
 	font-display: swap;
@@ -280,7 +280,7 @@
 
 @font-face {
 	font-family: "Bodoni 24";
-	src: url("/fonts/Bodoni-24-Medium.woff2") format("woff2");
+	src: url("fonts/Bodoni-24-Medium.woff2") format("woff2");
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
@@ -288,7 +288,7 @@
 
 @font-face {
 	font-family: "Bodoni 24";
-	src: url("/fonts/Bodoni-24-Medium-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-24-Medium-Italic.woff2") format("woff2");
 	font-weight: 500;
 	font-style: italic;
 	font-display: swap;
@@ -296,7 +296,7 @@
 
 @font-face {
 	font-family: "Bodoni 24";
-	src: url("/fonts/Bodoni-24-Bold.woff2") format("woff2");
+	src: url("fonts/Bodoni-24-Bold.woff2") format("woff2");
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
@@ -304,7 +304,7 @@
 
 @font-face {
 	font-family: "Bodoni 24";
-	src: url("/fonts/Bodoni-24-Bold-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-24-Bold-Italic.woff2") format("woff2");
 	font-weight: 700;
 	font-style: italic;
 	font-display: swap;
@@ -312,7 +312,7 @@
 
 @font-face {
 	font-family: "Bodoni 24";
-	src: url("/fonts/Bodoni-24-Fatface.woff2") format("woff2");
+	src: url("fonts/Bodoni-24-Fatface.woff2") format("woff2");
 	font-weight: 900;
 	font-style: normal;
 	font-display: swap;
@@ -320,7 +320,7 @@
 
 @font-face {
 	font-family: "Bodoni 24";
-	src: url("/fonts/Bodoni-24-Fatface-Italic.woff2") format("woff2");
+	src: url("fonts/Bodoni-24-Fatface-Italic.woff2") format("woff2");
 	font-weight: 900;
 	font-style: italic;
 	font-display: swap;
