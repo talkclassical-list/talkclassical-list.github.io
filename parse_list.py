@@ -91,7 +91,7 @@ def generate_word_trees(all_titles, min_size, min_freq):
   word_tree = list(filter(lambda t: len(t.nodes()) > min_size, word_tree))
 
   def font_scale(x):
-    o = 0.3
+    o = 0.4
     return (1-o)*x + o
 
   outputs = []
