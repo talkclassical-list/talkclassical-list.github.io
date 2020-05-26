@@ -23,7 +23,7 @@
 	<h4 class="tier">{{tier[0]}} Tier</h4>
 	<ul class="list">
 	{% for work in tier[1] %}
-		<li><b>{{ work["comp"] }}</b>: <i>{{ work["title"] }}</i> {% if work["raw_yr"] %}({{ work["raw_yr"] }}){% elif work["year"] %}({{ work["year"] }}){% endif %}</li>
+		<li><b>{{ work["comp"] }}</b>: {% if work["thd"] %}<a href={{ work["thd"] }}>{{ work["title"] }}</a>{% else %}<i>{{ work["title"] }}</i>{% endif %} {% if work["raw_yr"] %}({{ work["raw_yr"] }}){% elif work["year"] %}({{ work["year"] }}){% endif %}</li>
 	{% endfor %}
 	</ul>
 	{% endfor %}
