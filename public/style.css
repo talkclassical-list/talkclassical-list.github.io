@@ -581,6 +581,11 @@ li {
 	padding-left: 0.5em;
 }
 
+
+.list > li > a {
+	font-style: italic;
+}
+
 button.icon {
 	border-color: unset;
 	border: none;
