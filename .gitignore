@@ -2,10 +2,11 @@
 *.svg
 *.json
 *.gv*
+*.txt
 public/**/*.html
 
 # Downloaded raw list
-*.txt
+list.*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -8,8 +8,36 @@ from math import floor
 from collections import Counter
 import subprocess
 
+from urllib import parse
+from bs4 import BeautifulSoup
 import networkx as nx
 from graphviz import Graph
+
+def parse_line(line):
+  work = {}
+  comp_loc = line.find(":")
+  if comp_loc != -1:
+    comp = line[:comp_loc].strip()
+    work["comp"] = comp
+  # rough year determination
+  year_loc = line.rfind("[")
+  if year_loc != -1:
+    year_str = line[year_loc:].strip("[]")
+    year_regex = re.search(r"\d{4}", year_str)
+    if year_regex:
+      work["year"] = int(year_regex.group())
+      if str(work["year"]) != year_str:
+        work["raw_yr"] = year_str
+    elif "cent" in year_str:
+      year_regex = re.search(r"\d{2}", year_str)
+      if year_regex:
+        work["year"] = int(year_regex.group()) * 100
+        work["raw_yr"] = year_str
+    work["title"] = line[comp_loc+1:year_loc].strip()
+  else:
+    work["title"] = line[comp_loc+1:].strip()
+
+  return work
 
 def parse_tier_list(name):
   works = []
@@ -18,51 +46,43 @@ def parse_tier_list(name):
   # used for storing last composer (wagner ring cycle)
   tmp_comp = None
   with open(name) as f:
-    lines = f.readlines()
-    for i, line in enumerate(lines):
-      # skip all the intro text
-      if line.startswith("The First"):
-        main_part = True
-      # stop at the last (non) tier
-      elif line.startswith("The Absolute"):
-        break
-      if main_part:
-        line = line.strip(" \t\n\r*")
-        # increment index if at title of next tier
-        if line.startswith("The "):
-          tier += 1
-        elif len(line):
-          comp_loc = line.find(":")
-          comp = line[:comp_loc].strip()
-          work = {"tier": tier}
-          # if next line is indented, store current composer
-          if lines[i+1][0] == " " and not tmp_comp:
-            tmp_comp = comp
+    soup = BeautifulSoup(f, features="lxml")
+    # find all of the tier titles
+    html_tier_titles = soup.find_all("h1")[:-1]
+    # find all of the tier uls (which immediately follow the titles)
+    html_tier_lists = [None] * len(html_tier_titles)
+    for i, title in enumerate(html_tier_titles):
+      if title.next_sibling.name == "ul":
+        html_tier = []
+        for tier_sibling in title.next_siblings:
+          if tier_sibling.name == "ul":
+            html_tier += tier_sibling
           else:
-            # use the temporary storage
-            if lines[i][0] == " ":
-              work["comp"] = tmp_comp
-            else:
-              tmp_comp = None
-              work["comp"] = comp
-            # rough year determination
-            year_loc = line.rfind("[")
-            if year_loc != -1:
-              year_str = line[year_loc:].strip("[]")
-              year_regex = re.search(r"\d{4}", year_str)
-              if year_regex:
-                work["year"] = int(year_regex.group())
-                if str(work["year"]) != year_str:
-                  work["raw_yr"] = year_str
-              elif "cent" in year_str:
-                year_regex = re.search(r"\d{2}", year_str)
-                if year_regex:
-                  work["year"] = int(year_regex.group()) * 100
-                  work["raw_yr"] = year_str
-              work["title"] = line[comp_loc+1:year_loc].strip()
-            else:
-              work["title"] = line[comp_loc+1:].strip()
+            break
+        html_tier_lists[i] = html_tier
+
+    for tier, html_tier in enumerate(html_tier_lists):
+      if html_tier:
+        for html_work in html_tier:
+          # sometimes strings are in multiple spans, so join all the strings together
+          line = "".join(html_work.strings).strip()
+          work = parse_line(line)
+          work["tier"] = tier
+          if not "comp" in work:
+            work["comp"] = tmp_comp
+          else:
+            tmp_comp = work["comp"]
+          # check if it's a link
+          link = html_work.find("a")
+          if link:
+            # get the actual url from google url wrapping
+            url = parse.urlparse(link["href"])
+            work["thd"] = parse.parse_qs(url.query)["q"][0]
+
+          # if it's not split into multiple pieces
+          if not work["title"].endswith(":"):
             works.append(work)
+
   return works
 
 def generate_word_trees(all_titles, min_size, min_freq):
@@ -137,7 +157,8 @@ def is_active(self, tmpl):
   return "active" if self._TemplateReference__context.name.startswith(tmpl) else ""
 
 if __name__ == "__main__":
-  works = parse_tier_list("list.txt")
+  works = parse_tier_list("list.html")
+  print("found", len(works), "works")
   with open("public/list.json", "w") as f:
     json.dump(works, f, ensure_ascii=False, separators=(",", ":"))
 
