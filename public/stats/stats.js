@@ -30,7 +30,7 @@ fetch("/list.json")
 			},
 		},
 		);
-		let comp_tier_slider = createSlider("comp-tier-range", [1, tier_max + 1], 1, [1, ...[...Array(11).keys()].map(x => (x + 1) * 10), tier_max + 1], 100/(tier_max + 1));
+		let comp_tier_slider = createSlider("comp-tier-range", [1, tier_max + 1], 1, [1, ...[...Array(11).keys()].map(x => (x + 1) * 10)], 100/(tier_max + 1));
 		comp_tier_slider.noUiSlider.on("set", new_tiers => {
 			let comp_ct = get_comps(new_tiers[0] - 1, new_tiers[1] - 1);
 			comp_chart.update({
