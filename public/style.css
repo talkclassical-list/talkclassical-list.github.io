@@ -496,7 +496,7 @@ h3 {
 }
 
 h4 {
-	font-family: "Bodoni 16";
+	font-family: "Bodoni 11";
 }
 
 @media (min-width: 80.0rem) {
@@ -521,7 +521,7 @@ h4 {
 }
 
 body {
-	font-family: "Bodoni 11";
+	font-family: "Bodoni 06";
 	font-weight: 400;
 	padding-top: 1rem;
 	background-color: #f8f8f8;
