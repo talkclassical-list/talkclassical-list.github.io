@@ -23,7 +23,7 @@ jobs:
         uses: ts-graphviz/setup-graphviz@v1
       - name: Install Deps
         run: |
-          pip install jinja2 graphviz networkx beautifulsoup4 lxml
+          pip install jinja2 graphviz networkx beautifulsoup4 lxml smartypants
           sudo apt install pdf2svg woff2
       - name: Checkout
         uses: actions/checkout@v2

@@ -46,7 +46,7 @@ fetch("/list.json")
 				setTimeout(() => {
 					dispElem("info", false);
 					setText("composer", piece.comp);
-					setText("title", smartquotes(piece.title));
+					setText("title", piece.title);
 					document.getElementById("yt").href = "https://www.youtube.com/results?search_query=" + encodeURIComponent(piece.comp + " " + piece.title);
 					setText("tier", piece.tier);
 					setText("year", piece.year ? "(" + piece.year + ")" : "");

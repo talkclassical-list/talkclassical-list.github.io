@@ -1,12 +1,9 @@
 #!/usr/bin/env python
 
-import json
-import re
-import jinja2
-import string
+import json, re, jinja2, string, subprocess
+from smartypants import smartypants, Attr
 from math import floor
 from collections import Counter
-import subprocess
 
 from urllib import parse
 from bs4 import BeautifulSoup
@@ -65,7 +62,7 @@ def parse_tier_list(name):
       if html_tier:
         for html_work in html_tier:
           # sometimes strings are in multiple spans, so join all the strings together
-          line = "".join(html_work.strings).strip()
+          line = smartypants("".join(html_work.strings).strip(), Attr.set1 | Attr.u)
           work = parse_line(line)
           work["tier"] = tier
           if not "comp" in work:
