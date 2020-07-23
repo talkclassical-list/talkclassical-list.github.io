@@ -348,7 +348,11 @@ main {
 }
 
 a {
-	color: #A9855B;
+	color: #333333;
+}
+
+a:focus, a:hover {
+	color: #666666;
 }
 
 @media (min-width: 80.0rem) {
@@ -584,6 +588,7 @@ li {
 
 .list > li > a {
 	font-style: italic;
+	text-decoration: underline;
 }
 
 button.icon {
@@ -637,7 +642,6 @@ nav {
 }
 
 .navlink {
-	color: #333333;
 	letter-spacing: 0.1rem;
 }
 
