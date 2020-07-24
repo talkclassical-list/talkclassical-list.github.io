@@ -162,7 +162,7 @@ if __name__ == "__main__":
   # rework the list so templating is easier
   tiers = set(work["tier"] for work in works)
   tier_list = [[work for work in works if work["tier"] == tier] for tier in tiers]
-  ord_tiers = [ordinal(t+1) for t in tiers]
+  car_tiers = [t+1 for t in tiers]
 
   # get the year range
   years = [work.get("year", works[0]["year"]) for work in works]
@@ -177,7 +177,7 @@ if __name__ == "__main__":
   render_env.trim_blocks = True
   render_env.lstrip_blocks = True
   with open("public/index.html", "w") as f:
-    f.write(render_env.get_template("list.html").render(tier_list=zip(ord_tiers, tier_list)))
+    f.write(render_env.get_template("list.html").render(tier_list=zip(car_tiers, tier_list)))
   with open("public/select/index.html", "w") as f:
     f.write(render_env.get_template("select.html").render())
   with open("public/stats/index.html", "w") as f:

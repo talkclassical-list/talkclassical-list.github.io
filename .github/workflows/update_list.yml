@@ -24,7 +24,7 @@ jobs:
       - name: Install Deps
         run: |
           pip install jinja2 graphviz networkx beautifulsoup4 lxml smartypants
-          sudo apt install pdf2svg woff2
+          sudo apt install pdf2svg woff2 unzip
       - name: Checkout
         uses: actions/checkout@v2
       - name: Checkout fonts
@@ -34,6 +34,11 @@ jobs:
           path: indestructible-type
       - name: Package fonts locally
         run: |
+          curl -L https://github.com/alerque/libertinus/releases/download/v6.12/Libertinus-6.12.zip -o libertinus.zip
+          unzip libertinus.zip
+          for i in Libertinus-6.12/LibertinusSerif*.otf; do
+            woff2_compress $i
+          done
           for i in indestructible-type/fonts/Bodoni/*.otf; do
             woff2_compress $i
           done
@@ -41,6 +46,7 @@ jobs:
             woff2_compress $i
           done
           mkdir -p public/fonts
+          cp Libertinus-6.12/*.woff2 public/fonts
           cp indestructible-type/fonts/Bodoni/*.woff2 public/fonts
           cp indestructible-type/fonts/*.woff2 public/fonts
           mkdir -p ~/.local/share/fonts
