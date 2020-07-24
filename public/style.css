@@ -379,8 +379,12 @@ input[type='submit'].button-outline:hover {
 }
 
 h1 {
-	font-weight: 700;
 	font-family: "Bodoni 24";
+}
+
+h1 b {
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
 }
 
 h2 {
@@ -393,6 +397,12 @@ h3 {
 
 h4 {
 	font-family: "Libertinus Serif";
+}
+
+@media (max-width: 80.0rem) {
+	h1.title {
+		font-size: 3.22rem;
+	}
 }
 
 @media (min-width: 80.0rem) {
