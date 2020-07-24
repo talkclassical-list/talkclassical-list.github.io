@@ -6,3 +6,6 @@ fetch_list:
 
 generate_files:
 	python parse_list.py
+
+run_server:
+	python -m http.server -d public
