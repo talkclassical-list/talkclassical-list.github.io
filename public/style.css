@@ -369,6 +369,8 @@ body {
 	background-color: #f8f8f8;
 	color: #333333;
 	letter-spacing: unset;
+	text-rendering: optimizeLegibility;
+	font-feature-settings: "liga", "kern", "mark";
 }
 
 #result, #rng {
