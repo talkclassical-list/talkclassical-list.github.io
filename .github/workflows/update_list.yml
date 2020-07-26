@@ -39,16 +39,11 @@ jobs:
           for i in Libertinus-6.12/LibertinusSerif*.otf; do
             pyftsubset $i --unicodes="U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD, U+0100-024F, U+0259, U+2020, U+2113" --flavor=woff2 --output-file=${i%.*}.woff2
           done
-          for i in indestructible-type/fonts/Bodoni/*.otf; do
-            fonttools ttLib.woff2 compress $i
-          done
-          for i in indestructible-type/fonts/Jost*.ttf; do
+          for i in indestructible-type/fonts/{Jost*.ttf,Bodoni/Bodoni-{16,24}*.otf}; do
             fonttools ttLib.woff2 compress $i
           done
           mkdir -p public/fonts
-          cp Libertinus-6.12/*.woff2 public/fonts
-          cp indestructible-type/fonts/Bodoni/*.woff2 public/fonts
-          cp indestructible-type/fonts/*.woff2 public/fonts
+          cp {Libertinus-6.12/*.woff2,indestructible-type/fonts/{*.woff2,Bodoni/*.woff2}} public/fonts
           mkdir -p ~/.local/share/fonts
           cp indestructible-type/fonts/Bodoni/Bodoni-11-Medium.otf ~/.local/share/fonts
       - name: Fetch Raw List
