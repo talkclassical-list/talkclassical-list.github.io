@@ -7,10 +7,7 @@ This is done automatically through GitHub Actions for GitHub Pages, but can also
 
 ### Requirements
 
-* Python:
-  * Jinja2 (for HTML generation)
-  * Graphviz (for word tree generation)
-  * NetworkX (for word tree generation)
+* Python: see [`requirements.txt`](requirements.txt).
 
 * `pdf2svg` for word tree generation
 * A local copy of [Bodoni* 11 Medium](https://indestructibletype.com/fonts/Bodoni/Bodoni-11-Medium.otf) for word tree generation
