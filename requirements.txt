@@ -1,0 +1,8 @@
+beautifulsoup4>=4.9.1
+Brotli>=1.0.7
+fonttools>=4.13.0
+graphviz>=0.14
+Jinja2>=2.11.2
+lxml>=4.5.2
+networkx>=2.4
+smartypants>=2.0.1

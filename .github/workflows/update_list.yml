@@ -21,12 +21,12 @@ jobs:
           python-version: "3.x"
       - name: Setup Graphviz
         uses: ts-graphviz/setup-graphviz@v1
-      - name: Install Deps
-        run: |
-          pip install -r requirements.txt
-          sudo apt install pdf2svg unzip
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Install Deps
+        run: |
+          sudo apt install pdf2svg unzip libxml2-dev libxslt1-dev python-dev
+          pip install -r requirements.txt
       - name: Checkout fonts
         uses: actions/checkout@v2
         with:
