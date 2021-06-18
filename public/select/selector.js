@@ -19,10 +19,10 @@ fetch("/list.json")
 		works = a;
 		cur_year = new Date().getFullYear();
 		let min_year = Math.min.apply(Math, works.map(w => w.year ? w.year : cur_year));
-		let tier = works[works.length-1].tier;
+		let max_tier = works[works.length-1].tier + 1;
 		min_year = Math.floor(min_year/100)*100;
 		let dates = createSlider("date-range", [min_year, cur_year], 20, [...Array(11).keys()].map(x => (x + min_year/100) * 100), 2000/(cur_year - min_year));
-		let tiers = createSlider("tier-range", [1, tier + 1], 1, [1, ...[...Array(11).keys()].map(x => (x + 1) * 10)], 100/(tier + 1));
+		let tiers = createSlider("tier-range", [1, max_tier], 1, [1, ...[...Array(Math.floor(max_tier/10)).keys()].map(x => (x + 1) * 10)], 100/(max_tier));
 		let filterWorks = (date_range, tier_range) => {
 			filtered = works.filter(i => {
 				let [begin, end] = date_range;

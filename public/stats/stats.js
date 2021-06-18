@@ -8,7 +8,7 @@ var comp_len = 20;
 fetch("/list.json")
 	.then(r => r.json())
 	.then(a => {
-		let tier_max = Math.max.apply(Math, a.map(w => w.tier));
+		let tier_max = Math.max.apply(Math, a.map(w => w.tier)) + 1;
 
 		let get_comps = (min_tier, max_tier) => {
 			let comp_arr = a.filter(w => w.tier >= min_tier && w.tier <= max_tier).map(w => w.comp);
@@ -17,7 +17,7 @@ fetch("/list.json")
 			comp_ct.sort((a, b) => b[1] - a[1]);
 			return comp_ct;
 		};
-		let comp_ct = get_comps(0, tier_max);
+		let comp_ct = get_comps(0, tier_max - 1);
 		let comp_chart = new Chartist.Bar("#top_comp", {
 			labels: comp_ct.map(c => c[0]).slice(0, comp_len),
 			series: [comp_ct.map(c => c[1]).slice(0, comp_len)],
@@ -30,7 +30,7 @@ fetch("/list.json")
 			},
 		},
 		);
-		let comp_tier_slider = createSlider("comp-tier-range", [1, tier_max + 1], 1, [1, ...[...Array(11).keys()].map(x => (x + 1) * 10)], 100/(tier_max + 1));
+		let comp_tier_slider = createSlider("comp-tier-range", [1, tier_max], 1, [1, ...[...Array(Math.floor(tier_max/10)).keys()].map(x => (x + 1) * 10)], 100/(tier_max));
 		comp_tier_slider.noUiSlider.on("set", new_tiers => {
 			let comp_ct = get_comps(new_tiers[0] - 1, new_tiers[1] - 1);
 			comp_chart.update({
