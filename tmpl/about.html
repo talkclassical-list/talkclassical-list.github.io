@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}List{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/linea-io/Linea-Iconset/_arrows/_ICONFONT/styles.css">
+{{ super() }}
+{% endblock %}
+
+{% block nav %}
+{{ super() }}
+<!--<li class="navitem"><button id="search" alt="Search" class="icon icon-basic-magnifier"></button></li>-->
+{% endblock %}
+
+{% block content %}
+	<h1 class="title">About</h1>
+	<hr>
+	<p>The list is curated by members of the TalkClassical.com forums. Read the info on <a class="link" href="https://docs.google.com/document/d/18t_9MHZTENbmYdezAAj4LRM0-Eak_MYO1HssZW2FX1U">the original document</a> to learn more.</p>
+{% endblock %}

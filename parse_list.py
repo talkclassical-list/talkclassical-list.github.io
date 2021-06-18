@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import json, re, jinja2, string, subprocess
+import json, re, jinja2, os, string, subprocess
 from smartypants import smartypants, Attr
 from math import floor
 from collections import Counter
@@ -184,3 +184,7 @@ if __name__ == "__main__":
     f.write(render_env.get_template("stats.html").render(num_works=len(works),
         num_comp=len(set(work["comp"] for work in works)),
         year_range=year_range, trees=trees))
+  os.makedirs("public/about", exist_ok=True)
+  with open("public/about/index.html", "w") as f:
+    f.write(render_env.get_template("about.html").render())
+
