@@ -122,7 +122,7 @@ def generate_word_trees(all_titles, min_size, min_freq):
         # find the longest path to a node (the "depth")
         wt.nodes[n]["depth"] = max(map(len, nx.all_simple_paths(wt, root, n)))
 
-    tr = Graph(root, node_attr={"shape": "plaintext", "fontname": "Bodoni* 11 Medium", "color": "#333333"},
+    tr = Graph(root, node_attr={"shape": "plaintext", "fontname": "Bodoni 11 Medium", "color": "#333333"},
         edge_attr={"color": "#aaaaaa"}, strict=True)
     tr.attr(rankdir="LR")
     tr.attr(bgcolor="#f8f8f8")
