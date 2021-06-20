@@ -36,27 +36,32 @@ def parse_line(line):
 
   return work
 
+def is_tier(tag):
+  return tag.name in ["h1", "p"] and re.compile(r"(?i)^the(\s)?(.*)(\s)?tier(.*)?$").search("".join(tag.stripped_strings))
+
 def parse_tier_list(name):
   works = []
-  tier = -1
-  main_part = False
   # used for storing last composer (wagner ring cycle)
   tmp_comp = None
   with open(name) as f:
     soup = BeautifulSoup(f, features="lxml")
     # find all of the tier titles
-    html_tier_titles = soup.find_all("h1")[:-1]
+    html_tier_titles = soup.find_all(is_tier)
     # find all of the tier uls (which immediately follow the titles)
     html_tier_lists = [None] * len(html_tier_titles)
-    for i, title in enumerate(html_tier_titles):
-      if title.next_sibling.name == "ul":
-        html_tier = []
+    i = 0
+    for title in html_tier_titles[:-1]:
+      print(f"found \"{''.join(title.stripped_strings)}\"")
+      html_tier = []
+      if title.next_sibling.name in ["ul", "ol"]:
+        list_type = title.next_sibling.name
         for tier_sibling in title.next_siblings:
-          if tier_sibling.name == "ul":
-            html_tier += tier_sibling
-          else:
+          if tier_sibling in html_tier_titles:
             break
+          elif tier_sibling.name == list_type:
+            html_tier += tier_sibling
         html_tier_lists[i] = html_tier
+      i += 1
 
     for tier, html_tier in enumerate(html_tier_lists):
       if html_tier:
@@ -79,6 +84,8 @@ def parse_tier_list(name):
           # if it's not split into multiple pieces
           if not work["title"].endswith(":"):
             works.append(work)
+      else:
+        print("blank:", tier+1)
 
   return works
 
