@@ -10,34 +10,29 @@ from bs4 import BeautifulSoup
 import networkx as nx
 from graphviz import Graph
 
+#                                                          | handle malformed date brackets
+#                                                          v
+LINE_REGEX = r"^(?:([^:]+):\s)?((.*?)(?:\[([^\]]*\d[^\]]+)(?:\]|[^\n])?).*|.*)$"
+
 def parse_line(line):
   work = {}
-  comp_loc = line.find(":")
-  if comp_loc != -1:
-    comp = line[:comp_loc].strip()
+  comp, title_no_year, title, year = re.compile(LINE_REGEX).match(line).groups()
+  if comp:
     work["comp"] = comp
-  # rough year determination
-  year_loc = line.rfind("[")
-  if year_loc != -1:
-    year_str = line[year_loc:].strip("[]")
-    year_regex = re.search(r"\d{4}", year_str)
-    if year_regex:
-      work["year"] = int(year_regex.group())
-      if str(work["year"]) != year_str:
-        work["raw_yr"] = year_str
-    elif "cent" in year_str:
-      year_regex = re.search(r"\d{2}", year_str)
-      if year_regex:
-        work["year"] = int(year_regex.group()) * 100
-        work["raw_yr"] = year_str
-    work["title"] = line[comp_loc+1:year_loc].strip()
-  else:
-    work["title"] = line[comp_loc+1:].strip()
+  ## rough year determination
+  if year:
+    year_re = re.compile(r"^.*?(?:(\d{4})|(\d{1,2})th)").match(year)
+    if year_re:
+      precise, century = year_re.groups()
+      work["year"] = int(precise) if precise else int(century) * 100
+      if (precise and len(year) != 4) or century:
+          work["raw_yr"] = year
+  work["title"] = (title or title_no_year).strip()
 
   return work
 
 def is_tier(tag):
-  return tag.name in ["h1", "p"] and re.compile(r"(?i)^the(\s)?(.*)(\s)?tier(.*)?$").search("".join(tag.stripped_strings))
+  return tag.name in ["h1", "p"] and re.compile(r"(?i)^the(\s)?(.*)(\s)?tier(.*)?$").match("".join(tag.stripped_strings))
 
 def parse_tier_list(name):
   works = []
