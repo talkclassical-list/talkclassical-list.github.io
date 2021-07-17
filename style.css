@@ -1,0 +1,578 @@
+@font-face {
+	font-family: "Jost";
+	src: url("fonts/Jost-400.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Bodoni 16";
+	src: url("fonts/Bodoni-16-Book.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Bodoni 16";
+	src: url("fonts/Bodoni-16-Book-Italic.woff2") format("woff2");
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Bodoni 16";
+	src: url("fonts/Bodoni-16-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Bodoni 16";
+	src: url("fonts/Bodoni-16-Medium-Italic.woff2") format("woff2");
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Bodoni 16";
+	src: url("fonts/Bodoni-16-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Bodoni 16";
+	src: url("fonts/Bodoni-16-Bold-Italic.woff2") format("woff2");
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Bodoni 16";
+	src: url("fonts/Bodoni-16-Fatface.woff2") format("woff2");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Bodoni 16";
+	src: url("fonts/Bodoni-16-Fatface-Italic.woff2") format("woff2");
+	font-weight: 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Bodoni 24";
+	src: url("fonts/Bodoni-24-Book.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Bodoni 24";
+	src: url("fonts/Bodoni-24-Book-Italic.woff2") format("woff2");
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Bodoni 24";
+	src: url("fonts/Bodoni-24-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Bodoni 24";
+	src: url("fonts/Bodoni-24-Medium-Italic.woff2") format("woff2");
+	font-weight: 500;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Bodoni 24";
+	src: url("fonts/Bodoni-24-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Bodoni 24";
+	src: url("fonts/Bodoni-24-Bold-Italic.woff2") format("woff2");
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Bodoni 24";
+	src: url("fonts/Bodoni-24-Fatface.woff2") format("woff2");
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Bodoni 24";
+	src: url("fonts/Bodoni-24-Fatface-Italic.woff2") format("woff2");
+	font-weight: 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Libertinus Serif";
+	src: url("fonts/LibertinusSerif-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Libertinus Serif";
+	src: url("fonts/LibertinusSerif-Italic.woff2") format("woff2");
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Libertinus Serif";
+	src: url("fonts/LibertinusSerif-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@media (max-width: 80.0rem) {
+	main, .navlist {
+		margin: 0 1.5em;
+	}
+}
+
+@media (min-width: 80.0rem) {
+	main {
+		max-width: 120rem;
+		margin: 0 auto;
+	}
+	.navlist {
+		max-width: 40rem;
+		margin: 0 auto;
+	}
+}
+
+main {
+	margin-top: 3em;
+}
+
+a {
+	color: #333333;
+}
+
+a:focus, a:hover {
+	color: #666666;
+}
+
+@media (min-width: 80.0rem) {
+	hr {
+		width: 48.0rem;
+	}
+}
+
+@media(max-width: 80.0rem) {
+	hr {
+		margin: 2.0rem 0;
+	}
+}
+
+hr {
+	background-color: #333333;
+	border: none;
+	height: 0.1rem;
+}
+
+label {
+	font-size: 2.2rem;
+	margin-bottom: 1.5rem;
+}
+
+@media (max-width: 80.0rem) {
+	.noUi-pips {
+		font-size: 1.3rem;
+	}
+	.noUi-value-horizontal {
+		transform: translate(-50%, 100%);
+	}
+}
+
+@media (min-width: 80.0rem) {
+	.noUi-pips {
+		font-size: 2rem;
+	}
+}
+
+.noUi-pips {
+	color: unset;
+	font-family: "Libertinus Serif";
+}
+
+.noUi-marker-horizontal.noUi-marker {
+	background-color: #333333;
+	margin-left: -0.05rem;
+	width: 0.1rem;
+}
+
+.noUi-handle::after,
+.noUi-handle::before {
+	all: unset;
+}
+
+.noUi-horizontal {
+	height: 6px;
+}
+
+.noUi-target {
+	background-color: #A9855B44;
+	border: none;
+	box-shadow: none;
+	margin-bottom: 6rem;
+}
+
+.noUi-horizontal .noUi-handle {
+	width: 28px;
+	height: 28px;
+	right: -14px;
+	top: calc(-6px - (18px - 6px)/2);
+}
+
+.noUi-handle {
+	box-shadow: none;
+	background-color: #F8F8F8;
+	border-radius: 14px;
+	border-color: #A9855B;
+	border-width: 0.1rem;
+}
+
+.noUi-connect {
+	background-color: #A9855B;
+}
+
+.button,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background-color: #A9855B;
+	border-color: #A9855B;
+	font-family: "Jost";
+	font-size: 1.3rem;
+	font-weight: 400;
+	border-radius: unset;
+}
+
+.button.button-outline,
+button.button-outline,
+input[type="button"].button-outline,
+input[type="reset"].button-outline,
+input[type="submit"].button-outline {
+	color: #A9855B;
+}
+
+.button.button-clear,
+button.button-clear,
+input[type="button"].button-clear,
+input[type="reset"].button-clear,
+input[type="submit"].button-clear {
+	color: #A9855B;
+}
+
+.button.button-outline:focus,
+.button.button-outline:hover,
+button.button-outline:focus,
+button.button-outline:hover,
+input[type='button'].button-outline:focus,
+input[type='button'].button-outline:hover,
+input[type='reset'].button-outline:focus,
+input[type='reset'].button-outline:hover,
+input[type='submit'].button-outline:focus,
+input[type='submit'].button-outline:hover {
+	border-color: #333333;
+	color: #333333;
+}
+
+h1 {
+	font-family: "Bodoni 24";
+}
+
+h1 b {
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+h2 {
+	font-family: "Bodoni 24";
+}
+
+h3 {
+	font-family: "Bodoni 16";
+}
+
+h4 {
+	font-family: "Libertinus Serif";
+}
+
+@media (max-width: 80.0rem) {
+	h1.title {
+		font-size: 3.22rem;
+	}
+}
+
+@media (min-width: 80.0rem) {
+	h1 {
+		font-size: 5.75rem;
+	}
+	h2 {
+		font-size: 4.5rem;
+	}
+	h3 {
+		font-size: 3.5rem;
+	}
+	h4 {
+		font-size: 2.75rem;
+	}
+	h5 {
+		font-size: 2.5rem;
+	}
+	h6, body, label {
+		font-size: 2.0rem;
+	}
+}
+
+body {
+	font-family: "Libertinus Serif";
+	font-weight: 400;
+	padding-top: 1rem;
+	background-color: #f8f8f8;
+	color: #333333;
+	letter-spacing: unset;
+	text-rendering: optimizeLegibility;
+	font-feature-settings: "liga", "kern", "mark";
+}
+
+#result, #rng {
+	height: 0;
+	opacity: 0;
+	transition: opacity 0.3s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+#result {
+	padding-bottom: 1em;
+	overflow-wrap: break-word;
+	hyphens: auto;
+	overflow: hidden;
+}
+
+h6.float-right {
+	padding-top: calc((3.8rem - 2.4rem)/2);
+}
+
+@media(max-width: 80.0rem) {
+	h6.float-right {
+		padding-top: calc((3.8rem - 1.5rem*1.4)/2);
+		font-size: 1.5rem;
+	}
+}
+
+.tier {
+	font-weight: 500;
+	margin-bottom: unset;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.tier:after {
+	content: "»";
+	transform: rotate(90deg);
+	z-index: -1;
+}
+
+.tier.active:after {
+	content: "«";
+}
+
+.list {
+	display: none;
+}
+
+.list.active {
+	display: block;
+}
+
+li {
+	margin-bottom: unset;
+	padding-left: 0.5em;
+}
+
+
+.list > li > a, .link {
+	font-style: italic;
+	text-decoration: underline;
+}
+
+button.icon {
+	border-color: unset;
+	border: none;
+	color: unset;
+	padding: unset;
+	line-height: unset;
+	margin-bottom: unset;
+}
+
+button.icon:focus, button.icon:hover {
+	color: #606c76;
+}
+
+.icon {
+	transform: translateY(0.05em);
+}
+
+.icon:before {
+	line-height: unset;
+}
+
+nav {
+	position: fixed;
+	width: 100%;
+	background-color: #f8f8f8;
+	border-bottom: .1rem solid #e3e3e3;
+	top: 0;
+	z-index: 1000;
+	height: 2.5em;
+}
+
+.navlist {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 100%;
+	list-style: none;
+	margin-bottom: 0;
+}
+
+.navitem {
+	display: inline;
+	margin-bottom: 0;
+	padding-left: 0;
+	font-family: "Jost";
+	font-weight: 400;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+}
+
+.navlink {
+	letter-spacing: 0.1rem;
+}
+
+.navlink.active {
+	color: #A9855B;
+	border-bottom: 0.1rem solid #A9855B;
+}
+
+.fab {
+	width: 2.25em;
+	height: 2.25em;
+	font-size: 1.5em;
+	border-radius: 50%;
+	padding: unset;
+	line-height: unset;
+	margin-bottom: unset;
+	position: fixed;
+	right: 1em;
+	bottom: 1em;
+	/*box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.20);*/
+	background-color: #f8f8f8 !important;
+}
+
+.ct-series-a .ct-bar, .ct-series-a .ct-point, .ct-series-a .ct-line {
+	stroke: #A9855B;
+}
+
+.ct-series-a .ct-point {
+	stroke-width: 0.5rem;
+	stroke-opacity: 0.5;
+}
+
+.ct-series-a .ct-line {
+	stroke-width: 0.25rem;
+}
+
+.ct-series-a .ct-area {
+	fill: #A9855B;
+	fill-opacity: 1;
+}
+
+@media (max-width: 80.0rem) {
+	.ct-series-a .ct-point {
+		stroke-width: 0.3rem;
+	}
+	.ct-series-a .ct-bar {
+		stroke-width: 1rem;
+	}
+	.ct-label {
+		font-size: 1rem;
+	}
+}
+
+@media (min-width: 80.0rem) {
+	.ct-series-a .ct-bar {
+		stroke-width: 2.5rem;
+	}
+	.ct-label {
+		font-size: 2rem;
+	}
+}
+
+.ct-label {
+	color: #333333;
+}
+
+.ct-chart-bar .ct-label.ct-horizontal.ct-end {
+	transform-origin: 100% 50%;
+	justify-content: flex-end !important;
+	text-align: right !important;
+	transform: translate(-50%) rotate(-45deg);
+	white-space: nowrap;
+}
+
+svg.ct-chart-bar, svg.ct-chart-line{
+	overflow: visible;
+}
+
+#comp-tier-range {
+	margin-bottom: 5em;
+}
+
+.ct-chart {
+	margin-bottom: 5em;
+}
+
+.ct-grid {
+	stroke: #e3e3e3;
+	stroke-dasharray: 0;
+}

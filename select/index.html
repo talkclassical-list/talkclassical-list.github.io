@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.css">
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/milligram">
+	<link rel="stylesheet" href="/style.css">
+	<title>Selector - Talk Classical List</title>
+
+<script src="https://cdn.jsdelivr.net/npm/smoothscroll-polyfill"></script>
+<script src="https://cdn.jsdelivr.net/npm/nouislider"></script>
+<script src="selector.js" async></script>
+</head>
+<body>
+	<nav>
+		<ul class="navlist">
+			<li class="navitem"><a class="navlink " href="/" alt="Home">Home</a></li>
+			<li class="navitem"><a class="navlink " href="/about" alt="About">About</a></li>
+			<li class="navitem"><a class="navlink " href="/stats" alt="Stats">Stats</a></li>
+			<li class="navitem"><a class="navlink active" href="/select" alt="Selector">Selector</a></li>
+		</ul>
+	</nav>
+	<main>
+	<h1>Music Selector</h1>
+	<hr>
+	<form id="rng">
+		<fieldset>
+		<label for="date-range">Dates</label>
+		<div id="date-range"></div>
+		<label for="tier-range">Tiers</label>
+		<div id="tier-range"></div>
+		<input class="button-outline" type="submit" value="Select" id="trigger">
+		<h6 class="float-right"><strong># Works:</strong> <span id="count"></h6>
+		</fieldset>
+	</form>
+	<div id="info">Loading...</div>
+	<div id="result">
+		<h3><strong id=composer></strong>: <em id="title"></em> <span id="year"></span></h3>
+		<h6 class="float-right">Tier <span id="tier"></span></h6>
+		<a class="button button-outline" href="" id="yt" target="_blank" rel="noopener noreferrer">Search on YouTube</a>
+	</div>
+	</main>
+</body>
+</html>
