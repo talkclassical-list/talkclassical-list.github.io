@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nouislider/distribute/nouislider.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/nouislider"></script>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport"/>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/milligram">
+	<link rel="stylesheet" href="/style.css">
+	<title>Stats - Talk Classical List</title>
+
+<script src="stats.js" async></script>
+</head>
+<body>
+	<nav>
+		<ul class="navlist">
+			<li class="navitem"><a class="navlink " href="/" alt="Home">Home</a></li>
+			<li class="navitem"><a class="navlink " href="/about" alt="About">About</a></li>
+			<li class="navitem"><a class="navlink active" href="/stats" alt="Stats">Stats</a></li>
+			<li class="navitem"><a class="navlink " href="/select" alt="Selector">Selector</a></li>
+		</ul>
+	</nav>
+	<main>
+	<h1>List Statistics</h1>
+	<hr>
+	<h3>Summary</h3>
+	<p>The list has 6411 works by 1557 composers over a span of 1120 years.</p>
+	<h3>Top Composers</h3>
+	<label for="comp-tier-range">Tiers</label>
+	<div id="comp-tier-range"></div>
+	<div class="ct-chart ct-octave" id="top_comp"></div>
+	<h3>Date-Tier Distribution</h3>
+	<div class="ct-chart ct-octave" id="dates"></div>
+	<h3>Common Titles</h3>
+	<p>Below are the most common title structures. Words are shown if they appear with the given structure at least three times. The size of each word corresponds to their relative frequency.</p>
+	<img src="/Symphony.svg">
+	<img src="/Piano.svg">
+	<img src="/String.svg">
+	<img src="/Violin.svg">
+	<img src="/Cello.svg">
+	<img src="/Concerto.svg">
+	<img src="/Variations.svg">
+	</main>
+</body>
+</html>
